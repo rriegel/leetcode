@@ -1,0 +1,20 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Record of technical problem solutions from leetcode, binarysearch, codewars, etc.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rriegel/leetcode.git"
+  },
+  "keywords": [],
+  "author": "Ryan Riegel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rriegel/leetcode/issues"
+  },
+  "homepage": "https://github.com/rriegel/leetcode#readme"
+}
