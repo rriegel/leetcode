@@ -27,7 +27,7 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
-export default twoSum = (nums, target) => {
+var twoSum = (nums, target) => {
   var result = [];
   for (var i = 0; i < nums.length; i ++) {
       for (var j = i+1; j < nums.length; j ++) {
@@ -37,4 +37,6 @@ export default twoSum = (nums, target) => {
       }
   }
 };
+
+export default twoSum;
 
