@@ -55,6 +55,7 @@ var conversion = {
   'D': 500,
   'M': 1000
 }
+// this solution should be O(n) time complexity because it has to loop through the length of the input string
 var romanToInt = function(s) {
   var s = s.split('');
   let result = 0;
