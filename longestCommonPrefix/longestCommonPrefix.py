@@ -19,5 +19,5 @@ def longest_common_prefix(strs):
   return separator.join(prefix)
 
 
-print(longest_common_prefix(["flower", "flow", "flight"]))
-print(longest_common_prefix(["look", "loop", "loose"]))
+print(longest_common_prefix(["flower", "flow", "flight"])) # should be fl
+print(longest_common_prefix(["look", "loop", "loose"])) # should be lo
