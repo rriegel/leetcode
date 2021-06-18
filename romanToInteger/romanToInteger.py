@@ -13,10 +13,14 @@ def roman_to_int(s):
   result = 0
   subtract_val = 0
   i = 0
+  last_idx = False
+  if (len(s)==1):
+    result += conversion[s[0]]
+
   while (i < len(s)):
-    ## this creates an error because it is not defined... how to get around this?
-    ## print(conversion[s[i+1]])
-    if (conversion[s[i]] >= conversion[s[i+1]] or conversion[s[i+1]] == None):
+    ## this algorithm presents an issue bc python gives an error when looking up an idx that doesn't exits in a list
+    ## not sure how to avert this problem
+    if (conversion[s[i]] >= conversion[s[i+1]]):
       result += conversion[s[i]]
     else:
       subtracting = True
@@ -28,8 +32,10 @@ def roman_to_int(s):
           break
         subtract_idx += 1
     i += 1
-  print(result)
-  print(subtract_val)
   return result - subtract_val
 
 print(roman_to_int('I'))
+print(roman_to_int('IV'))
+print(roman_to_int('XII'))
+print(roman_to_int('LVIII'))
+print(roman_to_int('MCMXCIV'))
