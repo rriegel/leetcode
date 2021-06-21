@@ -12,7 +12,7 @@ Selection Sort Algorithm -- O(n^2)
 var findSmallest = (arr) => {
   var smallest = arr[0];
   var smallestIdx = 0;
-  for (var i = 0; i < arr.length; i ++) {
+  for (var i = 1; i < arr.length; i ++) {
     if (arr[i] < smallest) {
       smallest = arr[i];
       smallestIdx = i;
