@@ -1,4 +1,3 @@
-
 // Definition for singly-linked list.
 function ListNode(val, next) {
   this.val = (val===undefined ? 0 : val)
@@ -6,7 +5,6 @@ function ListNode(val, next) {
 }
 
 var addTwoNumbers = function(l1, l2) {
-
   let head = new ListNode();
   let node = head;
   // define carry in outer context because we need to know if there is a carry after the loop
