@@ -1,9 +1,10 @@
 """
+Grokking Algorithms Ch 3 Recursion walkthrough with factorial
+"""
+"""
 This is a string literal
 Python doesn't recognize strings if they are not assigned to a var
-"""
-"""
-Grokking Algorithms Ch 3 Recursion walkthrough with factorial
+Useful as multi-line comments
 """
 
 def fact(x):
@@ -18,4 +19,3 @@ test2 = fact(5)
 test3 = fact(3)
 
 print([test1 == 1, test2 == 120, test3 == 6])
-
