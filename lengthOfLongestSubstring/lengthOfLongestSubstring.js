@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {number}
  */
-
 var lengthOfLongestSubstring = function(s) {
   let largest = 0;
   let obj = {};
