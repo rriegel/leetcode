@@ -18,6 +18,6 @@ var max = function(list) {
 };
 /*
 found out that arrow functions do not have the arguments object
-rest parameters are the workaround but I didn't have luck implementing that
+rest parameters are the workaround but I didn't try implementing that
 */
 export default max;
