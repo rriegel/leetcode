@@ -27,6 +27,8 @@ def person_is_seller(name):
   ## V = number of vertices
   ## E = number of edges
 def search(name):
+  ## people must be checked in the order they were added - so the search list needs to be a queue
+  ## this will require manual implementation in js
   search_queue = deque()
   search_queue += graph[name]
   searched = [] ## keep track of which people were already searched
