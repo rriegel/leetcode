@@ -9,4 +9,6 @@ function allLongestStrings(inputArray) {
       if (currentL > maxL) { maxL = currentL};
   }
   return inputArray.filter(str => str.length === maxL);
-}
+};
+
+export default allLongestStrings;
