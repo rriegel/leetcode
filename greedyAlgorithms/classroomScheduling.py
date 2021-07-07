@@ -45,7 +45,7 @@ def compare_times(old_time, new_time):
 def findBestSchedule(class_list):
   ## negation and data type checking
   if not isinstance(class_list, list):
-    return 'Please pass in an array!!'
+    return 'Please pass in a list!!'
 
   schedule = []
   latest_class = None
