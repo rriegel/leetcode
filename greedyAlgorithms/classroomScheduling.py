@@ -1,3 +1,8 @@
+"""
+Grokking Algorithms Ch 8: Greedy Algorithms
+The classroom scheduling problem
+"""
+
 classes = [
   {
     'name': 'ART',
