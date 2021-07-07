@@ -68,4 +68,4 @@ var findBestSchedule = (classList) => {
 };
 
 console.log(findBestSchedule(classes)); //should return [ART, MATH, MUSIC]
-console.log(findBestSchedule({'Art': '10:00', 'Gym': '112'})); //should return [ART, MATH, MUSIC]
+console.log(findBestSchedule({'Art': '10:00', 'Gym': '112'})); //should return 'Please pass in an array!!'
