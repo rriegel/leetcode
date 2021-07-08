@@ -1,5 +1,3 @@
-/*jshint expr:true*/
-
 /*
  * Bubble sort is the most basic sorting algorithm in all of Computer
  * Sciencedom. It works by starting at the first element of an array and
@@ -30,39 +28,30 @@
  *
 */
 
-// Feel free to add helper functions if needed.
-
-
 var bubbleSort = function(array) {
-  // result array
-  var result = [];
-  // marker var to indicate if there were any switches made
-  var switchCount = 0;
-  // loop through array
+  var result = [], switchCount = 0;
+
   for (var i = 0; i < array.length; i ++) {
-    // if element at the current position is greater than that of the next position
+    // if current element is greater than next element
     if (array[i] > array[i+1]) {
       // switch them
       result.push(array[i+1]);
       result.push(array[i]);
-      // increment index because you added 2 elements in this one pass
+      // increment i because you added 2 elements
       i ++;
-      // increment switches because this will be used later
+      // increment switchCount
       switchCount ++;
-      // otherwise (current 2 elements are sorted)
     } else {
       // push current element per usual
       result.push(array[i]);
     }
   }
-  // if there was a switch in the previous loop cycle
+  // if there was a switch in the previous loop cycle, recursion
   if (switchCount > 0) {
-    // recursion
     return bubbleSort(result);
   }
-  // otherwise, return the sorted result array
+  // return the sorted result array
   return result;
-  // return result array
 };
 
 // var arr1 = [3, 6, 2, 1, 4, 5, 19, 3];
