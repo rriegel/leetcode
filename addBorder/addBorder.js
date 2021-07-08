@@ -14,7 +14,7 @@ addBorder(picture) = ["*****",
                       "*****"]
 */
 
-function addBorder(picture) {
+export function addBorder(picture) {
   // get length of first row and add 2 to get length of asterisk rows
   let l = picture[0].length + 2;
   let ends = "*".repeat(l);
