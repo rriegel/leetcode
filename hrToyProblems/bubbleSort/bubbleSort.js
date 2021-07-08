@@ -54,5 +54,5 @@ var bubbleSort = function(array) {
   return result;
 };
 
-// var arr1 = [3, 6, 2, 1, 4, 5, 19, 3];
-// bubbleSort(arr1);
+var arr1 = [3, 6, 2, 1, 4, 5, 19, 3];
+console.log(bubbleSort(arr1));
