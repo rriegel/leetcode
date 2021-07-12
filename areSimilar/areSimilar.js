@@ -15,3 +15,5 @@ function areSimilar(a, b) {
   }
   return false;
 }
+
+export default areSimilar;
