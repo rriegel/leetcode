@@ -1,5 +1,5 @@
 import isIPv4Address from './isIPv4Address.js';
-// 4 numbers separated by periods and must be between 0 and 255;
+// 4 numbers separated by periods and must be between 0 and 255
 
 let test = () => {
   console.log(isIPv4Address('172.0.30.1') === true);
