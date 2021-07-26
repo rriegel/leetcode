@@ -48,4 +48,4 @@
 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1
 */
 
-export default myPow;
+module.exports = myPow;

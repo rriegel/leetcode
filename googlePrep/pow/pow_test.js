@@ -1,4 +1,4 @@
-import myPow from './pow.js';
+const myPow = require('./pow');
 
 var test = () => {
   let num = 729;
