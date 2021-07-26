@@ -38,7 +38,7 @@
   };
 
   let res = n > 0 ? recursePow(x, n) : 1;
-  return res;
+  return res.toFixed(4);
 };
 
 /*
