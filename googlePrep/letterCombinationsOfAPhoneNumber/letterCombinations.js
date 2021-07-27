@@ -2,7 +2,14 @@
  * @param {string} digits
  * @return {string[]}
  */
- var phoneMap = {
+// input: string of digits
+// output: is an array of combinations of mapped letters that represent the digits
+// constraints: 4 digs max, 2-9 range is specified
+// edge cases: 1 and 0 don't map, input must be numeric, empty string returns empty []
+
+// algorithm: BFS --> line 30-31
+
+var phoneMap = {
   '2': 'abc',
   '3': 'def',
   '4': 'ghi',
@@ -14,13 +21,6 @@
 };
 
 var letterCombinations = function(digits) {
-  // input: string of digits
-  // output: is an array of combinations of mapped letters that represent the digits
-  // constraints: 4 digs max, 2-9 range is specified
-  // edge cases: 1 and 0 don't map, input must be numeric, empty string returns empty []
-
-  // algorithm: BFS --> line 30-31
-
   let ans = [], len = digits.length;
   if (!len) { return [] };
   var bfs = (pos, str) => {
