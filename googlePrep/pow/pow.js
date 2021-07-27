@@ -21,20 +21,20 @@
   // DIVIDE AND CONQUER SOLUTION WITH MEMOIZATION
   // negative case
   if (n < 0) {
-      n = Math.abs(n);
-      x = 1 / x;
+    n = Math.abs(n);
+    x = 1 / x;
   }
 
   let calc = new Map();
 
   var recursePow = (num, pow) => {
-      if (pow === 1) { return num };
-      if (calc.has(pow)) { return calc.get(pow) };
+    if (pow === 1) { return num };
+    if (calc.has(pow)) { return calc.get(pow) };
 
-      let val1 = Math.floor(pow / 2);
-      let val2 = pow - val1;
-      calc.set(pow, recursePow(num, val1) * recursePow(num, val2));
-      return calc.get(pow);
+    let val1 = Math.floor(pow / 2);
+    let val2 = pow - val1;
+    calc.set(pow, recursePow(num, val1) * recursePow(num, val2));
+    return calc.get(pow);
   };
 
   let res = n > 0 ? recursePow(x, n) : 1;

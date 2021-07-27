@@ -24,13 +24,13 @@ var letterCombinations = function(digits) {
   let ans = [], len = digits.length;
   if (!len) { return [] };
   var bfs = (pos, str) => {
-      if (pos === len) {ans.push(str)}
-      else {
-          let letters = phoneMap[digits[pos]];
-          for (let i = 0; i < letters.length; i ++) {
-              bfs(pos+1, str + letters[i]);
-          }
-      };
+    if (pos === len) {ans.push(str)}
+    else {
+      let letters = phoneMap[digits[pos]];
+      for (let i = 0; i < letters.length; i ++) {
+        bfs(pos+1, str + letters[i]);
+      }
+    };
   };
   bfs(0, "");
   return ans;
