@@ -19,7 +19,7 @@ var letterCombinations = function(digits) {
   // constraints: 4 digs max, 2-9 range is specified
   // edge cases: 1 and 0 don't map, input must be numeric, empty string returns empty []
 
-  // algorithm: BFS
+  // algorithm: BFS --> line 30-31
 
   let ans = [], len = digits.length;
   if (!len) { return [] };
