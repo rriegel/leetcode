@@ -4,6 +4,7 @@
  * @param {number[]} speed
  * @return {number}
  */
+// approach - map - time O(n) space O(n)
 var carFleet = function(target, position, speed) {
   let map = [];
   let res = 0;
@@ -19,3 +20,5 @@ var carFleet = function(target, position, speed) {
   }
   return res;
 };
+
+module.exports = carFleet;
