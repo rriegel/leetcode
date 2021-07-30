@@ -1,0 +1,22 @@
+// iterative factorial function implementation
+const {performance} = require('perf_hooks');
+
+function factorial (num) {
+  let result = 1;
+  if (result === num) {
+    return result;
+  }
+  for (let i = 2; i <= num; i ++) {
+    result = result * i;
+  }
+  return result;
+
+};
+
+console.log('factorial of 4: ', factorial(4));
+console.log('factorial of 5: ', factorial(5));
+
+let t1 = performance.now();
+factorial(10);
+let t2 = performance.now();
+console.log(`Time Elapsed: ${t2 - t1} ms`);
