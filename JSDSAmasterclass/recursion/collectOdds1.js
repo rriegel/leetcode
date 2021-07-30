@@ -1,3 +1,4 @@
+// helper function recursion method to complete collect odds
 function collectOdds(nums) {
   let result = [];
 
