@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
 */
-// approach - two pointer approach
+// approach - two pointer approach - floyd's algorithm (tortoise and hare)
 var findDuplicate = function(nums) {
   let fast = 0, slow = 0;
 
