@@ -49,6 +49,10 @@ function test() {
   console.log(determineSum(arr, 11) === false);
   console.log(determineSum(arr, 20) === false);
   arr = [10, 15, 3, 7, 35, 2, 53, 6, 77, 12, 90, 88, 72, 13, 1, 34, 5];
+  console.log(determineSum(arr, 17) === true);
+  console.log(determineSum(arr, 18) === true);
+  console.log(determineSum(arr, 11) === true);
+  console.log(determineSum(arr, 113) === false);
 }
 
 test();
