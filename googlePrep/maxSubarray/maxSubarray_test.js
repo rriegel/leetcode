@@ -1,4 +1,4 @@
-const maxSubarray = require('./maxSubarray');
+const maxSubarray = require('./maxSubarray2');
 
 var test = () => {
   let arr = [-2,1,-3,4,-1,2,1,-5,4];
