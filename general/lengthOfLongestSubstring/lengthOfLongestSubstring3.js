@@ -8,6 +8,7 @@ c: O(n) linear runtime
 e: empty str
 */
 // approach - sliding window: check if char exists in substring at each i, accumulate the string and take max to hold largest number
+//
 function longestSubstring(str) {
   let max = 0, currentStr = "";
 
