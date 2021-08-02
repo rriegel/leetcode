@@ -12,9 +12,22 @@ Follow-up: what if you can't use division?
 // input - arr of ints
 // output - new arr of products
 // constraints - N/A (what if you can't use division)
-// edge cases - empty array, array of 1
+// edge cases - empty array, array of 1, 0 in the array?
 
 // approaches - brute force O(n^2) | division O(n)
+function product(arr) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i ++) {
+    product *= arr[i];
+  }
+  let prodArr = [];
+  for (let i = 0; i < arr.length; i ++) {
+    prodArr.push(product/arr[i]);
+  }
+  return prodArr;
+};
+
+// approach - no division
 function product(arr) {
   let product = 1;
   for (let i = 0; i < arr.length; i ++) {
