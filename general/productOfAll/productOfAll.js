@@ -27,19 +27,6 @@ function product(arr) {
   return prodArr;
 };
 
-// approach - no division
-function product(arr) {
-  let product = 1;
-  for (let i = 0; i < arr.length; i ++) {
-    product *= arr[i];
-  }
-  let prodArr = [];
-  for (let i = 0; i < arr.length; i ++) {
-    prodArr.push(product/arr[i]);
-  }
-  return prodArr;
-};
-
 function test() {
   console.log(product([1, 2, 3, 4, 5]));
   console.log(product([3, 2, 1]));
