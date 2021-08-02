@@ -1,5 +1,6 @@
-// import lengthOfLongestSubstring from './lengthOfLongestSubstring.js'
-import lengthOfLongestSubstring from './lengthOfLongestSubstring2.js'
+// const lengthOfLongestSubstring = require('./lengthOfLongestSubstring');
+// const lengthOfLongestSubstring = require('./lengthOfLongestSubstring2');
+const lengthOfLongestSubstring = require('./lengthOfLongestSubstring3');
 
 var test = () => {
   console.log(lengthOfLongestSubstring("abcabcbb")); //should be 3
