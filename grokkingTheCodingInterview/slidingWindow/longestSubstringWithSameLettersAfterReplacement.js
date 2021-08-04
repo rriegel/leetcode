@@ -27,7 +27,7 @@ function longestAfterReplacement(s, k) {
     charMap[currentChar] = charMap[currentChar] + 1 || 1;
     maxRepeats = Math.max(maxRepeats, charMap[currentChar]);
 
-    if ((wEnd - wStart + 1 - maxRepeats) > k) {
+    while ((wEnd - wStart + 1 - maxRepeats) > k) {
       let firstChar = s[wStart];
       charMap[firstChar] --;
       wStart ++;
