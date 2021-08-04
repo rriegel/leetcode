@@ -47,6 +47,8 @@ function test() {
   console.log(longestNonrepeatSubstring(s) === 2);
   s = 'abccde';
   console.log(longestNonrepeatSubstring(s) === 3);
+  s = 'abcdefgh';
+  console.log(longestNonrepeatSubstring(s) === s.length);
 };
 
 test();
