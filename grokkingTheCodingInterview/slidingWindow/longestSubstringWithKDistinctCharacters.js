@@ -23,7 +23,7 @@ function longestSubstringWithKDistinct(s, k) {
   for (let wEnd = 0; wEnd < s.length; wEnd ++) {
     let newChar = s.charAt(wEnd);
     map[newChar] = map[newChar] + 1 || 1;
-    if (Object.keys(map).length > k) {
+    while (Object.keys(map).length > k) {
       let firstChar = s[wStart];
       map[firstChar] -= 1;
       if (map[firstChar] === 0) {

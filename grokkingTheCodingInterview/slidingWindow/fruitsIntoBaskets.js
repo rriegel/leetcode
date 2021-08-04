@@ -29,7 +29,7 @@ function highestFruits(arrOfTrees) {
     let currentFruit = arrOfTrees[windowEnd];
     fruitMap[currentFruit] = fruitMap[currentFruit] + 1 || 1;
 
-    if (Object.keys(fruitMap).length > 2) {
+    while (Object.keys(fruitMap).length > 2) {
       let firstFruit = arrOfTrees[windowStart];
       if (fruitMap[firstFruit] === 1) {
         delete fruitMap[firstFruit];
