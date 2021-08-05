@@ -30,6 +30,7 @@ function removeDups1(arr) {
 };
 
 // two pointer approach as done by grokking -- nextNonDup
+// this algo is faster because it doesn't use splice
 function removeDups2(arr) {
   let nextNonDup = 1, i = 1;
 
