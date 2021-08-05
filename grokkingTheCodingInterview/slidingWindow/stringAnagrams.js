@@ -31,7 +31,11 @@ function stringAnagrams(str, pat) {
   let matched = 0;
 
   for (let i = 0; i < pat.length; i ++) {
-    patMap[str[i]] = patMap[str[i]] + 1 || 1;
+    const chr = pat[i];
+    if (!(chr in patMap)) {
+      patMap[chr] = 0;
+    }
+    patMap[chr] += 1;
   }
 
   for (let wEnd = 0; wEnd < str.length; wEnd ++) {
