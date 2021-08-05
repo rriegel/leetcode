@@ -41,6 +41,7 @@ function test() {
   console.log(longestAfterReplacement('aabccbb', 2) === 5);
   console.log(longestAfterReplacement('abbcb', 1) === 4);
   console.log(longestAfterReplacement('abccde', 1) === 3);
+  console.log(longestAfterReplacement('a', 1) === 1);
 };
 
 test();
