@@ -57,12 +57,12 @@ function findPermutation(str, pat) {
 function test() {
   let string = "oidbcaf", pattern = "abc";
   console.log(findPermutation(string, pattern) === true);
-  // string = "odicf", pattern = "dc";
-  // console.log(findPermutation(string, pattern) === false)
-  // string = "bcdxabcdy", pattern = "bcdyabcdx";
-  // console.log(findPermutation(string, pattern) === true)
-  // string = "aaacb", pattern = "abc";
-  // console.log(findPermutation(string, pattern) === true)
+  string = "odicf", pattern = "dc";
+  console.log(findPermutation(string, pattern) === false)
+  string = "bcdxabcdy", pattern = "bcdyabcdx";
+  console.log(findPermutation(string, pattern) === true)
+  string = "aaacb", pattern = "abc";
+  console.log(findPermutation(string, pattern) === true)
 };
 
 test();
