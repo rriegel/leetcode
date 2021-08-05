@@ -12,31 +12,37 @@ Output: [[-5, 2, 3], [-2, -1, 3]]
 Explanation: There are two unique triplets whose sum is equal to zero.
 */
 
+// tried to do this iteratively but cannot get it to work
 function tripletZeroSum(arr) {
   arr = arr.sort((a, b) => a - b)
-  const n = arr.length
   let triplets = [];
-  let left = 0, right = n - 1;
-  let mid = left+1;
-  while (left < right) {
-    let leftVal = arr[left];
-    let midVal = arr[mid];
-    let rightVal = arr[right];
-    let equation = Math.abs(midVal+rightVal) - Math.abs(leftVal);
 
-    if (equation < 0) {
-      mid ++;
-    } else {
-      right --;
+  for (let left = 0; left < arr.length; left ++) {
+    const n = arr.length;
+    let right = n - 1;
+    if (left > 0 && arr[left] === arr[left-1]) { // skip same element to avoid duplicate triplets
+      continue;
     }
-
-    if (equation === 0) {
-      triplets.push([leftVal, midVal, rightVal]);
-      left++;
-      mid = left+1;
-      right = n - 1;
+    let mid = left+1;
+    let target = -arr[left];
+    while (left < right) {
+      const currSum = arr[mid] + arr[right];
+      if (currSum === target) { // found a triplet
+        triplets.push([arr[left], arr[mid], arr[right]]);
+        mid ++;
+        right --;
+        while (mid < right && arr[mid] === arr[mid-1]) {
+          mid ++; // skip same element to avoid duplicate triplets
+        }
+        while (mid < right && arr[right] === arr[right+1]) {
+          right --; // skip same element to avoid duplicate triplets
+        }
+      } else if (target > currSum) {
+        mid ++;
+      } else {
+        right --;
+      }
     }
-
   }
   return triplets;
 };
