@@ -28,13 +28,9 @@ function tripletZeroSum(arr) {
         if (sum === target) { //mid and high minus left equals 0
           triplets.push([arr[i], arr[mid], arr[right]]);
           // handle potential mid duplicates
-          while (arr[mid] === arr[mid+1]) {
-            mid ++;
-          }
+          while (arr[mid] === arr[mid+1]) mid ++;
           // handle potential right duplicates
-          while (arr[right] === arr[right-1]) {
-            right --;
-          }
+          while (arr[right] === arr[right-1]) right --;
           // ^^^ handle duplicates BEFORE changing pointers because otherwise dups may not be detected
           mid ++;
           right --;
