@@ -1,4 +1,4 @@
-import isValid from './validParentheses.js';
+const isValid = require('./validParentheses');
 
 var case1 = "()";
 var case2 = "()[]{}";

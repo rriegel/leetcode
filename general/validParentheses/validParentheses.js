@@ -21,4 +21,4 @@
   return stack.length !== 0 ? false : true;
 };
 
-export default isValid;
+module.exports = isValid;
