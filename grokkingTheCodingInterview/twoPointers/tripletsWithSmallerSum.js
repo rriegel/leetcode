@@ -18,32 +18,30 @@ Explanation: There are four triplets whose sum is less than the target:
 // two pointer solution
 function smallerSumTriplets(nums, target) {
   nums = nums.sort((a,b) => a-b);
-  let tripletSums = 0;
+  let count = 0;
   for (let left = 0; left < nums.length-2; left ++) {
-    if (left === 0 || arr[left] !== arr[left-1]) {
+    if (left === 0 || nums[left] !== nums[left-1]) {
       let mid = left+1;
       let right = nums.length-1;
       while (mid < right) {
-        let currSum = arr[left] + arr[mid] + arr[right];
+        let currSum = nums[left] + nums[mid] + nums[right];
         if (currSum < target) {
-          tripletSums ++;
-          while (arr[mid] === arr[mid+1]) mid ++;
-          while (arr[right] === arr[right-1]) right --;
-        }
-        if (currSum > target) {
-          right --;
-        } else {
+          // instead of incrementing the count once, increment it by right - mid
+          // because all sums in between will be smaller than the current one
+          // meaning they satisfy the condition
+          count += right - mid;
           mid ++;
-        }
+        } else right --;
       }
     }
   }
-  return tripletSums;
+  return count;
 };
 
 function test() {
   console.log(smallerSumTriplets([-1, 0, 2, 3], 3) === 2);
   console.log(smallerSumTriplets([-1, 4, 2, 1, 3], 5) === 4);
+  console.log(smallerSumTriplets([-1, 0, 2, 3, 6, 8, 1, 1], 6) === 19);
 };
 
 test();
