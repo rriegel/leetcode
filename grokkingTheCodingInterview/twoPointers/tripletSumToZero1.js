@@ -34,6 +34,7 @@ function tripletZeroSum(arr) {
           while (arr[right] === arr[right-1]) {
             right --;
           }
+          // ^^^ handle duplicates BEFORE changing pointers because otherwise dups may not be detected
           mid ++;
           right --;
         } else if (sum > target) {
