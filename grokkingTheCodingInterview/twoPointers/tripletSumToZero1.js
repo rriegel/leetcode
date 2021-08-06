@@ -17,11 +17,12 @@ function tripletZeroSum(arr) {
   arr = arr.sort((a, b) => a-b);
   let triplets = [];
   for (let i = 0; i < arr.length - 2; i ++) { // arr.length - 2 because mid and right pointers
-    // handle potential duplicates
-    if (i === 0 || (i > 0 && arr[i] !== arr[i-1])) {
+    // only run this block if i is 0 or if arr[i] !== arr[i-1] (handles potential duplicates)
+    if (i === 0 || arr[i] !== arr[i-1]) {
       let target = 0-arr[i];
       let mid = i+1;
       let right = arr.length - 1;
+      // two pointer algorithm
       while (mid < right) {
         let sum = arr[mid] + arr[right];
         if (sum === target) { //mid and high minus left equals 0
