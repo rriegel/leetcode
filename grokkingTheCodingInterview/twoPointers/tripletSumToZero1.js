@@ -17,31 +17,32 @@ function tripletZeroSum(arr) {
   arr = arr.sort((a, b) => a - b)
   let triplets = [];
 
-  for (let left = 0; left < arr.length; left ++) {
+  for (let left = 0; left < arr.length-2; left ++) {
     const n = arr.length;
-    let right = n - 1;
-    if (left > 0 && arr[left] === arr[left-1]) { // skip same element to avoid duplicate triplets
-      continue;
-    }
-    let mid = left+1;
-    let target = -arr[left];
-    while (left < right) {
-      const currSum = arr[mid] + arr[right];
-      if (currSum === target) { // found a triplet
-        triplets.push([arr[left], arr[mid], arr[right]]);
-        mid ++;
-        right --;
-        while (mid < right && arr[mid] === arr[mid-1]) {
-          mid ++; // skip same element to avoid duplicate triplets
+    if (left === 0 || (left > 0 && arr[left] !== arr[left-1])) { // skip same element to avoid duplicate triplets
+      let mid = left+1;
+      let right = n - 1;
+      let target = -arr[left];
+
+      while (mid < right) {
+        const currSum = arr[mid] + arr[right];
+        if (currSum === target) { // found a triplet
+          triplets.push([arr[left], arr[mid], arr[right]]);
+          while (mid < right && arr[mid] === arr[mid+1]) {
+            mid ++; // skip same element to avoid duplicate triplets
+          }
+          while (mid < right && arr[right] === arr[right-1]) {
+            right --; // skip same element to avoid duplicate triplets
+          }
+          mid++;
+          right--;
+        } else if (target > currSum) {
+          mid ++;
+        } else {
+          right --;
         }
-        while (mid < right && arr[right] === arr[right+1]) {
-          right --; // skip same element to avoid duplicate triplets
-        }
-      } else if (target > currSum) {
-        mid ++;
-      } else {
-        right --;
       }
+
     }
   }
   return triplets;
