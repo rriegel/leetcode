@@ -37,7 +37,6 @@ function smallerSumTriplets(nums, target) {
 };
 
 function test() {
-  debugger;
   console.log(smallerSumTriplets([-1, 0, 2, 3], 3) === 2);
   console.log(smallerSumTriplets([-1, 4, 2, 1, 3], 5) === 4);
   console.log(smallerSumTriplets([-1, 0, 2, 3, 6, 8, 1, 1], 6) === 19);
