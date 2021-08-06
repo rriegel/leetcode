@@ -14,19 +14,22 @@ Input: [2, 2, 0, 1, 2, 0]
 Output: [0 0 1 2 2 2 ]
 */
 
+// two pointers
 function dutchFlagSort(arr) {
   let left = 0;
   let right = arr.length-1;
   let i = 0;
+  // start two pointers algorithm
   while (i <= right) {
     if (arr[i] === 0) {
-      [arr[i], arr[left]] = [arr[left], arr[i]] // swap... ???
+      [arr[i], arr[left]] = [arr[left], arr[i]]; // swap... ???
       i ++;
       left ++;
     } else if (arr[i] === 1) {
       i ++;
     } else {
-      [arr[i], arr[right]] = [arr[right], arr[i]] // swap... ???
+      [arr[i], arr[right]] = [arr[right], arr[i]]; // swap... ???
+      // only increment right here because the el at right maybe needs sorted again
       right --;
     }
   }
