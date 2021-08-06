@@ -22,13 +22,13 @@ function dutchFlagSort(arr) {
   // start two pointers algorithm
   while (i <= right) {
     if (arr[i] === 0) {
-      [arr[i], arr[left]] = [arr[left], arr[i]]; // swap... ???
+      [arr[i], arr[left]] = [arr[left], arr[i]]; // ES6 destructuring assignment
       i ++;
       left ++;
     } else if (arr[i] === 1) {
       i ++;
     } else {
-      [arr[i], arr[right]] = [arr[right], arr[i]]; // swap... ???
+      [arr[i], arr[right]] = [arr[right], arr[i]];
       // only increment right here because the el at right maybe needs sorted again
       right --;
     }
