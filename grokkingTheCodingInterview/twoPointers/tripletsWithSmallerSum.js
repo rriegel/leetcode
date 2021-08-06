@@ -15,6 +15,7 @@ Explanation: There are four triplets whose sum is less than the target:
    [-1, 1, 4], [-1, 1, 3], [-1, 1, 2], [-1, 2, 3]
 */
 
+// two pointer solution
 function smallerSumTriplets(nums, target) {
   nums = nums.sort((a,b) => a-b);
   let tripletSums = 0;
