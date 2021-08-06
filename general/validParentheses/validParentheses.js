@@ -1,8 +1,9 @@
 /**
  * @param {string} s
  * @return {boolean}
- */
- var isValid = (s) => {
+*/
+
+var isValid = (s) => {
   var parens = {
       ")": "(",
       "}": "{",
