@@ -12,37 +12,36 @@ Output: [[-5, 2, 3], [-2, -1, 3]]
 Explanation: There are two unique triplets whose sum is equal to zero.
 */
 
-// tried to do this iteratively but cannot get it to work
+// iterative two pointer solution
 function tripletZeroSum(arr) {
-  arr = arr.sort((a, b) => a - b)
+  arr = arr.sort((a, b) => a-b);
   let triplets = [];
-
-  for (let left = 0; left < arr.length-2; left ++) {
-    const n = arr.length;
-    if (left === 0 || (left > 0 && arr[left] !== arr[left-1])) { // skip same element to avoid duplicate triplets
-      let mid = left+1;
-      let right = n - 1;
-      let target = -arr[left];
-
+  for (let i = 0; i < arr.length - 2; i ++) { // arr.length - 2 because mid and right pointers
+    // handle potential duplicates
+    if (i === 0 || (i > 0 && arr[i] !== arr[i-1])) {
+      let target = 0-arr[i];
+      let mid = i+1;
+      let right = arr.length - 1;
       while (mid < right) {
-        const currSum = arr[mid] + arr[right];
-        if (currSum === target) { // found a triplet
-          triplets.push([arr[left], arr[mid], arr[right]]);
-          while (mid < right && arr[mid] === arr[mid+1]) {
-            mid ++; // skip same element to avoid duplicate triplets
+        let sum = arr[mid] + arr[right];
+        if (sum === target) { //mid and high minus left equals 0
+          triplets.push([arr[i], arr[mid], arr[right]]);
+          // handle potential mid duplicates
+          while (arr[mid] === arr[mid+1]) {
+            mid ++;
           }
-          while (mid < right && arr[right] === arr[right-1]) {
-            right --; // skip same element to avoid duplicate triplets
+          // handle potential right duplicates
+          while (arr[right] === arr[right-1]) {
+            right --;
           }
-          mid++;
-          right--;
-        } else if (target > currSum) {
           mid ++;
-        } else {
           right --;
+        } else if (sum > target) {
+          right --;
+        } else {
+          mid ++;
         }
       }
-
     }
   }
   return triplets;
