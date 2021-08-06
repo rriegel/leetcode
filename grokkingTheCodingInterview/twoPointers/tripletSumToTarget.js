@@ -25,29 +25,27 @@ Explanation: The triplet [1, 1, 1] has the closest sum to the target.
 // edge case: if target = 1 and theres a sum that = 2 and a sum = 0, return 0
 function tripletTargetSum(nums, target) {
   nums = nums.sort((a,b) => a-b);
-  let newTripletSum;
-  let resultDiff;
+  let diff = Infinity;
   for (let left = 0; left < nums.length - 2; left ++) {
     let mid = left+1;
     let right = nums.length-1;
-    newTripletSum = nums[left]+nums[mid]+nums[right];
-    let currAbsDiff = Math.abs(newTripletSum-target);
-    let currDiff = newTripletSum-target;
-    if (resultDiff === undefined || currAbsDiff < Math.abs(resultDiff) || (currAbsDiff === Math.abs(resultDiff) && currDiff < resultDiff)) {
-      resultDiff = currDiff;
-      while (nums[mid] === nums[mid+1]) mid ++;
-      while (nums[right] === nums[right-1]) right --;
-      mid ++;
-      right --;
-    } else if (currDiff > resultDiff) {
-      right --;
-    } else {
-      mid ++
+    while (mid < right) {
+      let newSum = nums[left] + nums[mid] + nums[right];
+      let newDiff = target - newSum;
+      if (newDiff === 0) {
+        return target;
+      }
+      if (Math.abs(newDiff) < Math.abs(diff) || (Math.abs(newDiff) === Math.abs(diff) && newDiff > diff)) {
+        diff = newDiff;
+      }
+      if (newDiff > 0) {
+        mid ++;
+      } else {
+        right --;
+      }
     }
   }
-  let result = target-Math.abs(resultDiff);
-  console.log(result)
-  return result;
+  return target - diff;
 };
 
 function test() {
