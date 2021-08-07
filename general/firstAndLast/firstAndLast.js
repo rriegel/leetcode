@@ -16,25 +16,21 @@ Output: [-1, -1]
 function firstAndLast(arr, target) {
   let left=0, right=arr.length-1;
   let indices = [];
-  while (left < right) {
+  while (left <= right) {
     if (arr[left] === target) {
       indices[0] = left;
-      if (indices[1]) {
+      if (typeof indices[1] === 'number') {
         return indices;
       }
     }
     if (arr[right] === target) {
       indices[1] = right;
-      if (indices[0]) {
+      if (typeof indices[0] === 'number') {
         return indices;
       }
     }
-    if (indices[0] === undefined) {
-      left ++;
-    }
-    if (indices[1] === undefined) {
-      right --;
-    }
+    if (indices[0] === undefined) left ++;
+    if (indices[1] === undefined) right --;
   }
   return [-1, -1];
 };
