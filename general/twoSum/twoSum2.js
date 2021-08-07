@@ -27,19 +27,16 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
-// this solution is at O(n) power
+// two pointer doesn't work in this case because two pointer needs sorting and that would change the indices of the nums, so using a map to link the num to its i and then using a one pointer loop to calculate the difference and return the indices base on that is better and linear time - O(n)
 var twoSum = (nums, target) => {
-  let storage = {};
-  let result = [];
-  nums.forEach((num, i) => {
-    storage[num] = i;
-  })
-  for (var i = 0; i < nums.length; i ++) {
-    let goal = target - nums[i];
-    if (storage[goal] !== undefined && storage[goal] !== i) {
-      result.push(i);
-      result.push(storage[goal]);
-      return result;
+  let map = {};
+  for (let i = 0; i < nums.length; i ++) {
+    map[nums[i]] = i;
+  }
+  for (let i = 0; i < nums.length; i ++) {
+    let diff = target - nums[i];
+    if (map[diff] && map[diff] !== i) {
+      return [i, map[diff]];
     }
   }
 };
