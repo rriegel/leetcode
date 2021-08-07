@@ -1,5 +1,4 @@
-// import twoSum from './twoSum.js';
-import twoSum from './twoSum2.js';
+const twoSum = require('./twoSum2');
 
 var test = () => {
 

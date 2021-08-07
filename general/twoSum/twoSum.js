@@ -29,14 +29,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 // this solution is O(n^2) because it loops through the length of nums 2x
 var twoSum = (nums, target) => {
-  var result = [];
-  for (var i = 0; i < nums.length; i ++) {
-      for (var j = i+1; j < nums.length; j ++) {
-          if (nums[i] + nums[j] === target) {
-              return [i, j];
-          }
-      }
-  }
+
 };
 
 export default twoSum;

@@ -44,4 +44,4 @@ var twoSum = (nums, target) => {
   }
 };
 
-export default twoSum;
+module.exports = twoSum;
