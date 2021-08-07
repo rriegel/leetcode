@@ -9,7 +9,7 @@ Output: [1, 1, 2, 2, 3, 3, 3]
 // dutch flag sort - two pointers on high and low indices and then increment with i through the array and replace values as you increment - linear time O(n)
 function sortThree(nums) {
   let low = 0, high = nums.length-1, i = 0;
-  while (i < high) {
+  while (i <= high) {
     if (nums[i] === 1) {
       [nums[low], nums[i]] = [nums[i], nums[low]];
       i ++;
