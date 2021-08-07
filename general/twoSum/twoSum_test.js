@@ -1,4 +1,4 @@
-const twoSum = require('./twoSum2');
+const twoSum = require('./twoSum');
 
 var test = () => {
 
