@@ -17,4 +17,5 @@ function minesweeper(matrix) {
     }
   }
   return newMatrix;
-}
+};
+// solution is O(n*m) time complexity and O(n*m) space complexity
