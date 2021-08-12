@@ -43,5 +43,6 @@ bug encountered:
 when line 19 was put on the outside of the for-loop,
 repeated values were in the result array
 
-this
+this must have pushed more nodes into the queue than necessary
+i'm not sure how to explain why exactly
 */
