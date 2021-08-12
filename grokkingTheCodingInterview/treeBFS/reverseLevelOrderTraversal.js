@@ -6,6 +6,8 @@ You should populate the values of all nodes in each level from left to right in 
 */
 const TreeNode = require('./treeNode');
 
+// this is exactly the same as normal level traversal except that the currentLevel is unshifted to the front of the result array instead of pushed to the back
+
 // this function runs in linear time O(n) where n is the number of nodes in the tree
 // this function has an O(n) space complexity too because the array returns all of the node values in the tree
 function reverseTraverse(root) {
