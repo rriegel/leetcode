@@ -21,7 +21,7 @@ function traverse(root) {
     let currentLevel = [];
     for (let i = 0; i < levelSize; i ++) {
       node = queue.shift();
-      currentLevel.push(node.value);
+      currentLevel.push(node.val);
       if (node.left) {
         queue.push(node.left);
       }
