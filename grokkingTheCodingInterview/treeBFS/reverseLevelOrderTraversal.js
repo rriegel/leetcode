@@ -16,10 +16,10 @@ function reverseTraverse(root) {
     let levelSize = queue.length;
     let currentLevel = [];
     for (let i = 0; i < levelSize; i ++) {
-      let node = queue.shift();
-      currentLevel.push(node.val);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
+      let currNode = queue.shift();
+      currentLevel.push(currNode.val);
+      if (currNode.left) queue.push(currNode.left);
+      if (currNode.right) queue.push(currNode.right);
     }
     result.unshift(currentLevel);
   }
@@ -37,3 +37,11 @@ function test() {
 };
 
 test();
+
+/*
+bug encountered:
+when line 19 was put on the outside of the for-loop,
+repeated values were in the result array
+
+this
+*/
