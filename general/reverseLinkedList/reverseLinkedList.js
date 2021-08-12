@@ -42,7 +42,7 @@ function test() {
       current = newList.head;
     } else {
       current.next = newNode;
-      current = current.next
+      current = current.next;
     }
   }
 
