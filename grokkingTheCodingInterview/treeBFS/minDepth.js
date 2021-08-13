@@ -11,14 +11,14 @@ function minimumDepth(root) {
   if (root === null) return 0;
 
   let queue = [root];
-  let result = 0;
+  let minTreeDepth = 0;
   while (queue.length) {
     let levelSize = queue.length;
-    result ++;
+    minTreeDepth ++;
     for (let i = 0; i < levelSize; i ++) {
       let node = queue.shift();
       if (!node.left && !node.right) {
-        return result;
+        return minTreeDepth;
       }
       if (node.left) queue.push(node.left);
       if (node.right) queue.push(node.right);
