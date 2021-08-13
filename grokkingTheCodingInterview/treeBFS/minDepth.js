@@ -8,6 +8,8 @@ const TreeNode = require('./treeNode');
 
 // this is a bfs problem because you can easily keep track of the levels that you are traversing in the tree;
 function minimumDepth(root) {
+  if (root === null) return 0;
+
   let queue = [root];
   let result = 0;
   while (queue.length) {
