@@ -41,9 +41,9 @@ function test() {
   root.left.left = new TreeNode(9);
   root.right.left = new TreeNode(10);
   root.right.right = new TreeNode(5);
-  console.log(levelOrderSuccessor(root, 12));
-  console.log(levelOrderSuccessor(root, 9));
-  console.log(levelOrderSuccessor(root, 5));
+  console.log(levelOrderSuccessor(root, 12).val === 7);
+  console.log(levelOrderSuccessor(root, 9).val === 10);
+  console.log(levelOrderSuccessor(root, 5) === null);
 };
 
 test();
