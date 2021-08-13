@@ -15,10 +15,7 @@ class TreeNode {
 
 // follow level Traversal pattern but just find the target node and return the next one
 function levelOrderSuccessor(root, target) {
-  if (root === null || target === null) {
-    return null;
-  }
-
+  if (root === null || target === null) return null;
   let queue = [root];
   let returnNext = false;
   while (queue.length) {
