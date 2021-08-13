@@ -20,8 +20,9 @@ function connectLevels(root) {
   let queue = [root];
 
   while (queue.length) {
+    let levelSize = queue.length;
     let prevNode = null;
-    for (let i = 0; i < queue.length; i ++) {
+    for (let i = 0; i < levelSize; i ++) {
       let currentNode = queue.shift();
       if (prevNode !== null) {
         prevNode.next = currentNode;
@@ -31,7 +32,7 @@ function connectLevels(root) {
       if (currentNode.right) queue.push(currentNode.right);
     }
   }
-  return root;
+  return root
 };
 
 function test() {
@@ -46,3 +47,9 @@ function test() {
 };
 
 test();
+
+/*
+encountered important bug---
+
+creating levelSize var is important because this refreshes the new size of the queue.
+the while condition checks this repeatedly but the for loop may not refresh that value correctly unless explicitly declared in the var
