@@ -53,3 +53,4 @@ encountered important bug---
 
 creating levelSize var is important because this refreshes the new size of the queue.
 the while condition checks this repeatedly but the for loop may not refresh that value correctly unless explicitly declared in the var
+*/
