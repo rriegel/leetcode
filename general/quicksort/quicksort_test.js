@@ -1,4 +1,4 @@
-import quicksort from './quicksort.js';
+const quicksort = require('./quicksort.js');
 
 var test1 = [10, 5, 2, 3];
 var test2 = [11, 2, 1002, 214, 4, 412];
