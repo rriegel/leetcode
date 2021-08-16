@@ -16,6 +16,6 @@ function test() {
   console.log(chessBoardCellColor('A2', 'C3') === false);
   console.log(chessBoardCellColor('A2', 'C4') === true);
   console.log(chessBoardCellColor('E5', 'D4') === true);
-}
+};
 
 test();
