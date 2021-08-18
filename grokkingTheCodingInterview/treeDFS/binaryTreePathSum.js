@@ -7,7 +7,9 @@ from root-to-leaf such that the sum of all the node values of that path equals â
 const TreeNode = require('./treeNode');
 
 function hasPathWithSum(root, S) {
-
+  if (root === null) return false;
+  if (root.val === S && !root.left && !root.right) return true;
+  return hasPathWithSum(root.left, S - root.val) || hasPathWithSum(root.right, S - root.val);
 };
 
 function test() {
@@ -19,6 +21,7 @@ function test() {
   root.right.right = new TreeNode(5);
   console.log(hasPathWithSum(root, 23));
   console.log(hasPathWithSum(root, 16));
+  console.log(hasPathWithSum(root, 18));
 };
 
 test();
