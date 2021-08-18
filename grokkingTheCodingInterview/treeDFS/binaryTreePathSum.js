@@ -6,6 +6,8 @@ from root-to-leaf such that the sum of all the node values of that path equals â
 */
 const TreeNode = require('./treeNode');
 
+// time complexity - O(n) because we traverse each node (worst case)
+// space complexity - O(n) because we make a recursive call for each node (call stack increases for each node)
 function hasPathWithSum(root, S) {
   if (root === null) return false; /* this base case gets hit when recursive call reaches left node */
   if (root.val === S && !root.left && !root.right) return true;
