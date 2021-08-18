@@ -7,22 +7,26 @@ const TreeNode = require('./treeNode');
 
 function findPaths(root, S) {
   allPaths = [];
+
+  const dfs = (currNode, S, currPath, allPaths) => {
+    if (currNode === null) return;
+
+    currPath.push(currNode.val);
+    if (currNode.val === S && currNode.left === null && currNode.right === null) {
+
+      allPaths.push([...currPath]);
+    } else {
+      dfs(currNode.left, S - currNode.val, currPath, allPaths);
+      dfs(currNode.right, S - currNode.val, currPath, allPaths);
+    }
+    currPath.pop();
+  }
+
   dfs(root, S, [], allPaths);
+
   return allPaths;
 };
 
-function dfs(currNode, S, currPath, allPaths) {
-  if (currNode === null) return;
-
-  currPath.push(currNode.val);
-  if (currNode.val === S && currNode.left === null && currNode.right === null) {
-    allPaths.push(currPath);
-  } else {
-    dfs(currNode.left, S - currNode.val, currPath, allPaths);
-    dfs(currNode.right, S - currNode.val, currPath, allPaths);
-  }
-  currPath.pop()
-}
 
 function test() {
   let root = new TreeNode(12);
