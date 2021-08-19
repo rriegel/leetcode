@@ -6,14 +6,16 @@ Given a binary tree and a number ‘S’, find all paths from root-to-leaf such 
 const TreeNode = require('./treeNode');
 
 function findPaths(root, S) {
+  if (!root) return [];
   allPaths = [];
 
-  const dfs = (currNode, S, currPath, allPaths) => {
+  const dfs = (currNode, S, currPath) => {
     if (currNode === null) return;
 
     currPath.push(currNode.val);
     if (currNode.val === S && currNode.left === null && currNode.right === null) {
-
+      // ES6 spread operator creates a copy of an array (same as arr.slice())
+      // this is necessary because the currPath array is reused through the call stack
       allPaths.push([...currPath]);
     } else {
       dfs(currNode.left, S - currNode.val, currPath, allPaths);
@@ -22,7 +24,7 @@ function findPaths(root, S) {
     currPath.pop();
   }
 
-  dfs(root, S, [], allPaths);
+  dfs(root, S, []);
 
   return allPaths;
 };
