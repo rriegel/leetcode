@@ -37,8 +37,9 @@ class Graph {
       throw `Vertex "${v}" does not exist in "${this.name}"`;
     }
 
-    for (let i = 0; i < this.adjacencyList[v].length; i ++) {
-      this.removeEdge(v, this.adjacencyList[v][i])
+    while (this.adjacencyList[v].length) {
+      let adjacentEdge = this.adjacencyList[v].pop()
+      this.removeEdge(v, adjacentEdge)
     }
     delete this.adjacencyList[v];
   }
@@ -71,8 +72,7 @@ myMap.addEdge('Baltimore', 'Sacramento');
 myMap.addEdge('Baltimore', 'WashingtonDC');
 myMap.addEdge('Baltimore', 'Cancun');
 myMap.addEdge('Cancun', 'PlayaDelCarmen');
-
-myMap.removeEdge('Cancun', 'PlayaDelCarmen');
+myMap.addEdge('CentreHall', 'Boston');
 
 myMap.removeVertex('Boston');
 
