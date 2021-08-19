@@ -8,25 +8,21 @@ const TreeNode = require('./treeNode');
 function findPath(root, sequence) {
   if (!root) return false;
 
-  const dfs = (currNode, currSeq, seqIdx) => {
+  const dfs = (currNode, seqIdx) => {
     if (!currNode) return false;
 
-    currSeq.push(currNode.val);
-
-    if (currSeq[seqIdx] === sequence[seqIdx]) {
-      if (!currNode.left && !currNode.right && currSeq.length === sequence.length) {
+    if (currNode.val === sequence[seqIdx]) {
+      if (!currNode.left && !currNode.right && seqIdx === sequence.length-1) {
         return true;
       } else {
         seqIdx ++;
-        return dfs(currNode.left, currSeq, seqIdx) || dfs(currNode.right, currSeq, seqIdx);
+        return dfs(currNode.left, seqIdx) || dfs(currNode.right, seqIdx);
       }
     }
-    seqIdx --;
-    currSeq.pop();
     return false;
   };
 
-  return dfs(root, [], 0);
+  return dfs(root, 0);
 };
 
 function test() {
