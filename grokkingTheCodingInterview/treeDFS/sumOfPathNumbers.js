@@ -13,11 +13,9 @@ function sumOfPathNumbers(root) {
     if (currNode === null) return;
 
     currPath.push(currNode.val);
-    if (currSum === 0) {
-      currSum = currNode.val;
-    } else {
-      currSum = currSum * 10 + currNode.val;
-    }
+
+    currSum = currSum * 10 + currNode.val;
+
     if (!currNode.left && !currNode.right) {
       sum += currSum;
     } else {
