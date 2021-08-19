@@ -42,7 +42,7 @@ class Graph {
   }
 
   dfsTraverse(v) {
-    if (!this.adjacencyList[v].length) return;
+    if (!this.adjacencyList[v].length) return `No connections to "${v}"`;
     let result = [];
     let visited = {};
     const dfs = (currV) => {
@@ -59,7 +59,7 @@ class Graph {
       }
     };
     dfs(v);
-    // return result;
+    return result;
   }
 };
 
@@ -75,18 +75,26 @@ myMap.addVertex('Montreal');
 myMap.addVertex('Baltimore');
 myMap.addVertex('Washington DC');
 myMap.addVertex('Sacramento');
+myMap.addVertex('SanFrancisco');
+myMap.addVertex('Oakland');
+myMap.addVertex('Lake Tahoe');
 myMap.addVertex('Cancun');
 myMap.addVertex('Playa Del Carmen');
+myMap.addVertex('Chicago');
 
 
 myMap.addEdge('CentreHall', 'StateCollege');
 myMap.addEdge('CentreHall', 'SlipperyRock');
+myMap.addEdge('CentreHall', 'Chicago');
 myMap.addEdge('SlipperyRock', 'Toronto');
 myMap.addEdge('SlipperyRock', 'Boston');
 myMap.addEdge('SlipperyRock', 'NewYorkCity');
 myMap.addEdge('SlipperyRock', 'Montreal');
 myMap.addEdge('CentreHall', 'Baltimore');
 myMap.addEdge('Baltimore', 'Sacramento');
+myMap.addEdge('Sacramento', 'SanFrancisco');
+myMap.addEdge('Sacramento', 'Oakland');
+myMap.addEdge('Sacramento', 'LakeTahoe');
 myMap.addEdge('Baltimore', 'WashingtonDC');
 myMap.addEdge('Baltimore', 'Cancun');
 myMap.addEdge('Cancun', 'PlayaDelCarmen');
@@ -94,4 +102,5 @@ myMap.addEdge('CentreHall', 'Boston');
 
 myMap.removeVertex('Boston');
 
-console.log(myMap);
+console.log(myMap.dfsTraverse('StateCollege'));
+// console.log(myMap.dfsTraverse('Chicago'));
