@@ -25,11 +25,8 @@ class Graph {
     if (!this.adjacencyList[v1]) throw `Vertex "${v1}" does not exist in "${this.name}"`;
     if (!this.adjacencyList[v2]) throw `Vertex "${v2}" does not exist in "${this.name}"`;
 
-    let v1Idx = this.adjacencyList[v2].indexOf(v1);
-    let v2Idx = this.adjacencyList[v1].indexOf(v2);
-
-    this.adjacencyList[v2].splice(v1Idx, 1)
-    this.adjacencyList[v1].splice(v2Idx, 1)
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter(vertex => vertex !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter(vertex => vertex !== v1);
   }
 
   removeVertex(v) {
@@ -38,10 +35,31 @@ class Graph {
     }
 
     while (this.adjacencyList[v].length) {
-      let adjacentEdge = this.adjacencyList[v].pop()
-      this.removeEdge(v, adjacentEdge)
+      const adjacentVertex = this.adjacencyList[v].pop();
+      this.removeEdge(v, adjacentVertex);
     }
     delete this.adjacencyList[v];
+  }
+
+  dfsTraverse(v) {
+    if (!this.adjacencyList[v].length) return;
+    let result = [];
+    let visited = {};
+    const dfs = (currV) => {
+      if (!currV) return;
+
+      visited[currV] = true;
+      result.push(currV);
+      if (this.adjacencyList[currV].length) {
+        for (let i = 0; i < this.adjacencyList[currV].length; i ++) {
+          if (!visited[this.adjacencyList[currV][i]]) {
+            dfs(this.adjacencyList[currV][i]);
+          }
+        }
+      }
+    };
+    dfs(v);
+    // return result;
   }
 };
 
