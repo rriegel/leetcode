@@ -2,7 +2,7 @@ class Graph {
   constructor(name='graph') {
     this.name = name;
     this.adjacencyList = {};
-  }
+  };
 
   addVertex(v) {
     if (this.adjacencyList[v]) {
@@ -19,7 +19,7 @@ class Graph {
 
     this.adjacencyList[v1].push(v2);
     this.adjacencyList[v2].push(v1);
-  }
+  };
 
   removeEdge(v1, v2) {
     if (!this.adjacencyList[v1]) throw `Vertex "${v1}" does not exist in "${this.name}"`;
@@ -27,7 +27,7 @@ class Graph {
 
     this.adjacencyList[v1] = this.adjacencyList[v1].filter(vertex => vertex !== v2);
     this.adjacencyList[v2] = this.adjacencyList[v2].filter(vertex => vertex !== v1);
-  }
+  };
 
   removeVertex(v) {
     if (!this.adjacencyList[v]) {
@@ -39,28 +39,31 @@ class Graph {
       this.removeEdge(v, adjacentVertex);
     }
     delete this.adjacencyList[v];
-  }
+  };
 
-  dfsTraverse(v) {
-    if (!this.adjacencyList[v].length) return `No connections to "${v}"`;
+  dfsTraverse(start) {
+    if (!this.adjacencyList[start].length) return `No connections to "${start}"`;
+
     let result = [];
     let visited = {};
+
     const dfs = (currV) => {
       if (!currV) return;
 
       visited[currV] = true;
       result.push(currV);
-      if (this.adjacencyList[currV].length) {
-        for (let i = 0; i < this.adjacencyList[currV].length; i ++) {
-          if (!visited[this.adjacencyList[currV][i]]) {
-            dfs(this.adjacencyList[currV][i]);
-          }
+      for (let i = 0; i < this.adjacencyList[currV].length; i ++) {
+        if (!visited[this.adjacencyList[currV][i]]) {
+          dfs(this.adjacencyList[currV][i]);
         }
       }
     };
-    dfs(v);
+
+    dfs(start);
+
     return result;
-  }
+  };
+
 };
 
 let myMap = new Graph('myMap');
@@ -81,7 +84,6 @@ myMap.addVertex('Lake Tahoe');
 myMap.addVertex('Cancun');
 myMap.addVertex('Playa Del Carmen');
 myMap.addVertex('Chicago');
-
 
 myMap.addEdge('CentreHall', 'StateCollege');
 myMap.addEdge('CentreHall', 'SlipperyRock');
