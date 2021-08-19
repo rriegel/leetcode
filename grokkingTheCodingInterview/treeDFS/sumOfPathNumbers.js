@@ -24,6 +24,7 @@ function sumOfPathNumbers(root) {
       dfs(currNode.left, currSum, currPath);
       dfs(currNode.right, currSum, currPath);
     }
+    currPath.pop();
   };
 
   dfs(root, 0, []);
