@@ -38,18 +38,18 @@ var Tree = function(value) {
 Tree.prototype.DFSelect = function(filter) {
 
   // make a variable to store the filtered results
-  var filteredResults = [];
+  var result = [];
   // function to perform filter on the nodes
-  var depthSearch = function(node, depth) {
+  var dfs = (node, depth) => {
     if (filter(node.value, depth)) {
-      filteredResults.push(node.value);
+      result.push(node.value);
     }
     for (var i = 0; i < node.children.length; i ++) {
-      depthSearch(node.children[i], depth + 1);
+      dfs(node.children[i], depth + 1);
     }
   }
-  depthSearch(this, 0);
-  return filteredResults;
+  dfs(this, 0);
+  return result;
     // perform filter on current node value
       // push this to the filtered results
     // iterate through the node children length
