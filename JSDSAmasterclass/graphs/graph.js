@@ -41,7 +41,7 @@ class Graph {
     delete this.adjacencyList[v];
   };
 
-  dfsTraverse(start) {
+  dfsRecursive(start) {
     if (!this.adjacencyList[start].length) return `No connections to "${start}"`;
 
     let result = [];
@@ -104,5 +104,5 @@ myMap.addEdge('CentreHall', 'Boston');
 
 myMap.removeVertex('Boston');
 
-console.log(myMap.dfsTraverse('StateCollege'));
-// console.log(myMap.dfsTraverse('Chicago'));
+console.log(myMap.dfsRecursive('StateCollege'));
+// console.log(myMap.dfsRecursive('Chicago'));
