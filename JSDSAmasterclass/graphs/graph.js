@@ -69,13 +69,13 @@ class Graph {
     if (!this.adjacencyList[start]) return `"${start}" not found`;
     if (!this.adjacencyList[start].length) return `No connections to "${start}"`;
 
-    let stack = [];
+    let stack = [start];
     let result = [];
     let visited = {};
-    stack.push(start);
+    let vertex;
 
-    while(stack.length) {
-      let vertex = stack.pop();
+    while (stack.length) {
+      vertex = stack.pop();
       if (!visited[vertex]) {
         result.push(vertex);
         visited[vertex] = true;
@@ -83,6 +83,27 @@ class Graph {
         for (let i = 0; i < neighbors.length; i ++) {
           stack.push(neighbors[i]);
         }
+      }
+    }
+    return result;
+  };
+
+  bfsIterative(start) {
+    if (!this.adjacencyList[start]) return `"${start}" not found`;
+    if (!this.adjacencyList[start].length) return `No connections to "${start}"`;
+
+    let queue = [start];
+    let result = [];
+    let visited = {};
+    let vertex;
+    while (queue.length) {
+      vertex = queue.shift();
+      if (!visited[vertex]) {
+        result.push(vertex)
+        visited[vertex] = true;
+        this.adjacencyList[vertex].forEach(neighbor => {
+          queue.push(neighbor);
+        })
       }
     }
     return result;
@@ -128,5 +149,6 @@ myMap.addEdge('CentreHall', 'Boston');
 
 myMap.removeVertex('Boston');
 
-console.log(myMap.dfsRecursive('PlayaDelCarmen'));
-console.log(myMap.dfsIterative('PlayaDelCarmen'));
+// console.log(myMap.dfsRecursive('PlayaDelCarmen'));
+// console.log(myMap.dfsIterative('PlayaDelCarmen'));
+console.log(myMap.bfsIterative('Sacramento'));
