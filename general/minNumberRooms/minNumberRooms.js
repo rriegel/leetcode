@@ -34,6 +34,8 @@ function minRooms(intervals) {
 // time complexity is linear, space complexity is constant
 
 function test() {
+  console.log(minRooms([[30, 75]]) === 1);
+  console.log(minRooms([[60, 150], [0, 50]]) === 1);
   console.log(minRooms([[30, 75], [0, 50], [60, 150]]) === 2);
   console.log(minRooms([[20, 55], [30, 75], [0, 50], [60, 150]]) === 3);
 };
