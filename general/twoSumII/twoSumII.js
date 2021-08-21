@@ -26,9 +26,7 @@ function findSum(nums, target) {
   let left = 0, right = nums.length - 1, sum;
   while (left < right) {
     sum = nums[left] + nums[right];
-    if (sum === target) {
-      return [left + 1, right + 1];
-    }
+    if (sum === target) return [left + 1, right + 1];
     if (sum > target) right --;
     else left ++;
   }
