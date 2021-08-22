@@ -18,7 +18,9 @@ we're return the words in an array so we can push the substrinigs into a result 
 // O(n+m) space complexity where n is the dictionary size and m is the string length
 function reconstruct(dict, str) {
   let dictMap = {};
-  for (word of dict) dictMap[word] = true;
+  for (word of dict) {
+    dictMap[word] = true;
+  }
   let res = [];
   let currStr = "";
   for (char of str) {
