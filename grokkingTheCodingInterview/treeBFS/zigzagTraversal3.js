@@ -14,6 +14,7 @@ function zigzagTraverse(root) {
   let zigZag = [];
   let queue = [];
   let currNode;
+
   queue.push(root);
   let flip = false;
   while (queue.length) {
