@@ -9,8 +9,9 @@ function pathsThatAddToS(root, S) {
 
   const dfs = (currNode, newS, currPath) => {
     if (!currNode) return;
-
     currPath.push(currNode.val);
+
+    console.log(currPath);
 
     if (!currNode.left && !currNode.right) {
       if (newS === currNode.val) {
@@ -38,8 +39,8 @@ function test() {
   root.right.right = new TreeNode(5);
   root.right.right.right = new TreeNode(4);
   console.log(pathsThatAddToS(root, 18));
-  console.log(pathsThatAddToS(root, 15));
-  console.log(pathsThatAddToS(root, 14));
+  // console.log(pathsThatAddToS(root, 15));
+  // console.log(pathsThatAddToS(root, 14));
 };
 
 test();
