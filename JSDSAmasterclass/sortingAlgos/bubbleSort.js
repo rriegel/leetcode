@@ -15,14 +15,19 @@ function bubbleSortNaive(arr) {
   return arr;
 };
 
-// this is the optimized solution
+// this is the optimized solution --> added swap tracker to break if there is no swaps in the previous pass (that means it's sorted)
+// time complexity is O(n^2)
+// if the input is NEARLY SORTED - time complexity is O(n) at best case
 function bubbleSort(arr) {
   for (let i = arr.length; i > 0; i --) {
+    let swap = false;
     for (let j = 0; j < i-1; j ++) {
       if (arr[j] > arr[j+1]) {
         [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+        swap = true
       }
     }
+    if (!swap) break;
   }
   return arr;
 };
