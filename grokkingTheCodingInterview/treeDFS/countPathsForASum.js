@@ -8,12 +8,12 @@ const TreeNode = require('./treeNode');
 
 // we return the number of paths
 function pathsThatHaveSum(root, S) {
-  let result = 0, queue = [];
+  let result = 0, stack = [];
 
   const dfs = (currNode, newS, currPath) => {
     if (!currNode) return 0;
 
-    currPath.shift(currNode.val);
+    currPath.push(currNode.val);
 
     if (!currNode.left && !currNode.right) {
       if (newS === currNode.val) {
