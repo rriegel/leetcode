@@ -26,8 +26,8 @@ var minDepth = function(root) {
     if (!currNode.left && !currNode.right) {
       minDepth = Math.min(minDepth, currDepth);
     }
-    if (currNode.left) dfs(currNode.left, currDepth+1);
-    if (currNode.right) dfs(currNode.right, currDepth+1);
+    if (currNode.left && currDepth < minDepth) dfs(currNode.left, currDepth+1);
+    if (currNode.right && currDepth < minDepth) dfs(currNode.right, currDepth+1);
   };
   dfs(root, 1);
   return minDepth;
