@@ -21,6 +21,10 @@ Constraints:
 -104 <= xn <= 104
 */
 
+// this is a divide and conquer solution
+// the n value is broken down into a base case using recursion
+// time complexity is O(log n)
+// space complexity is O(log n)
 var myPow = function(x, n) {
   if (n < 0) {
     n = Math.abs(n);
