@@ -34,7 +34,7 @@ var letterCombinations = function(digits) {
   if (!digits.length) return [];
   let res = [];
   const DFS = (pos, currStr) => {
-    if (pos === digits.length) res.push(currStr)
+    if (pos === digits.length) res.push(currStr);
     else {
       let letters = phoneMap[digits[pos]];
       for (let i = 0; i < letters.length; i ++) {
