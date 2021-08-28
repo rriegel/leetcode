@@ -31,6 +31,16 @@ function test() {
   expected = JSON.stringify([13,2,2,1,60,3,12,0,0,0]);
   console.log(result);
   console.log(result === expected);
+
+  result = JSON.stringify(moveZeros([]));
+  expected = JSON.stringify([]);
+  console.log(result);
+  console.log(result === expected);
+
+  result = JSON.stringify(moveZeros([0]));
+  expected = JSON.stringify([0]);
+  console.log(result);
+  console.log(result === expected);
 };
 
 test();
