@@ -62,6 +62,8 @@ function justify(words, k) {
 
 function test() {
   console.log(justify(["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog", "Thank", "You", "-", "Ryan"], 16));
+  console.log(justify(["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog", "Thank", "You", "-", "Ryan"], 32));
+  console.log(justify(["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog", "Thank", "You", "-", "Ryan"], 10));
 };
 
 test();
