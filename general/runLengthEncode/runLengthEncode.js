@@ -30,7 +30,7 @@ function decode(str) {
   let res = "";
   let rep, char;
   for (let i = 0; i < str.length; i += 2) {
-    rep = Number(str[i]);
+    rep = str[i];
     char = str[i+1];
     res += char.repeat(rep);
   }
