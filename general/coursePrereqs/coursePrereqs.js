@@ -31,10 +31,10 @@ print courses_to_take(courses)
 // edge: if no valid order exists (there is a missing prereq) - return null;
 
 // approach--> graph traversal
+
 const DFS = (node, adjList, visited, arrive, depart, topSort) => {
   arrive[node]++;
   visited[node] = true;
-
   for (let neighbor of adjList[node]) {
     if (!visited[neighbor]) {
       visited[neighbor] = true;
@@ -50,8 +50,8 @@ const DFS = (node, adjList, visited, arrive, depart, topSort) => {
 
 function courseOrder(courses) {
   const visited = {};
-  const arrive = new Array(Object.keys(courses).length-1).fill(0);
-  const depart = new Array(Object.keys(courses).length-1).fill(0);
+  const arrive = new Array(Object.keys(courses).length).fill(0);
+  const depart = new Array(Object.keys(courses).length).fill(0);
   const topSort = [];
 
   for (let vertex in courses) {
@@ -63,11 +63,11 @@ function courseOrder(courses) {
 };
 
 function test() {
-  let courses = {
-    'CSC200': ['CSC100'],
-    'CSC100': ['CSC200']
-  };
-  console.log(courseOrder(courses));
+  // let courses = {
+  //   'CSC200': ['CSC100'],
+  //   'CSC100': ['CSC200']
+  // };
+  // console.log(courseOrder(courses));
   courses = {
     'CSC300': ['CSC100', 'CSC200'],
     'CSC200': ['CSC100'],
