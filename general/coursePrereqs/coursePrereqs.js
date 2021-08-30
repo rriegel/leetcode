@@ -69,6 +69,14 @@ function test() {
     'CSC100': []
   };
   console.log(courseOrder(courses))
+  courses = {
+    'CSC300': ['CSC100', 'CSC200'],
+    'CSC200': ['CSC100', 'CSC141'],
+    'CSC100': ['CSC50'],
+    'CSC141': [],
+    'CSC50': []
+  };
+  console.log(courseOrder(courses))
 };
 
 test();
