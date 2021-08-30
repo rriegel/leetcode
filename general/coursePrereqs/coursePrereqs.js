@@ -31,34 +31,35 @@ print courses_to_take(courses)
 // edge: if no valid order exists (there is a missing prereq) - return null;
 
 // approach--> graph traversal
+const DFS = (node, adjList, visited, arrive, depart, topSort) => {
+  arrive[node]++;
+  visited[node] = true;
+
+  for (let neighbor of adjList[node]) {
+    if (!visited[neighbor]) {
+      visited[neighbor] = true;
+      if (DFS(neighbor, adjList, visited, arrive, depart, topSort)) return true;
+    } else {
+      if (depart[neighbor] === 0) return true;
+    }
+  }
+  depart[node] ++;
+  topSort.push(node);
+  return false;
+};
+
 function courseOrder(courses) {
+  const visited = {};
+  const arrive = new Array(Object.keys(courses).length-1).fill(0);
+  const depart = new Array(Object.keys(courses).length-1).fill(0);
+  const topSort = [];
 
-  let start, prereqCount = 0;
-  // find a starting point (course with most prereqs)
-  for (let course in courses) {
-    if (courses[course].length > prereqCount) {
-      start = course;
-      prereqCount = courses[course].length;
+  for (let vertex in courses) {
+    if (!visited[vertex]) {
+      if (DFS(vertex, courses, visited, arrive, depart, topSort)) return [];
     }
   }
-  console.log(start);
-  // search from starting point and keep track of visited
-  let res = [];
-  let visited = {};
-
-  const dfs = (currV) => {
-    if (!currV) return;
-
-    visited[currV] = true;
-    res.push(currV);
-    for (let i = 0; i < courses[currV].length; i ++) {
-      if (!visited[courses[currV][i]]) {
-        dfs(courses[currV][i]);
-      }
-    }
-  }
-  dfs(start);
-  return res;
+  return topSort;
 };
 
 function test() {

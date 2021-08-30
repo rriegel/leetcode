@@ -67,9 +67,9 @@ var findOrder = function(numCourses, prerequisites) {
   const topSort = [];
 
   for (let vertex = 0; vertex < adjList.length; vertex ++) {
-      if (!visited[vertex]) {
-        if (DFS(vertex, adjList, visited, arrive, depart, topSort)) return [];
-      }
+    if (!visited[vertex]) {
+      if (DFS(vertex, adjList, visited, arrive, depart, topSort)) return [];
+    }
   }
   return topSort;
 };
