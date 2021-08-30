@@ -51,7 +51,6 @@ function test() {
   console.log(decode1);
   console.log(decode2);
   console.log(decode3);
-
 };
 
 test();
