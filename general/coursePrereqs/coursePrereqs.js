@@ -32,15 +32,33 @@ print courses_to_take(courses)
 
 // approach--> graph traversal
 function courseOrder(courses) {
-  let res = [];
-  let visited = {};
+
+  let start, prereqCount = 0;
+  // find a starting point (course with most prereqs)
   for (let course in courses) {
-    let prereqs = courses[course];
-    for (let i = 0; i < prereqs.length; i ++) {
-      let curr = prereqs[i];
-      if (!visited[curr] && )
+    if (courses[course].length > prereqCount) {
+      start = course;
+      prereqCount = courses[course].length;
     }
   }
+  console.log(start);
+  // search from starting point and keep track of visited
+  let res = [];
+  let visited = {};
+
+  const dfs = (currV) => {
+    if (!currV) return;
+
+    visited[currV] = true;
+    res.push(currV);
+    for (let i = 0; i < courses[currV].length; i ++) {
+      if (!visited[courses[currV][i]]) {
+        dfs(courses[currV][i]);
+      }
+    }
+  }
+  dfs(start);
+  return res;
 };
 
 function test() {
