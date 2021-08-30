@@ -64,11 +64,16 @@ function courseOrder(courses) {
 
 function test() {
   let courses = {
+    'CSC200': ['CSC100'],
+    'CSC100': ['CSC200']
+  };
+  console.log(courseOrder(courses));
+  courses = {
     'CSC300': ['CSC100', 'CSC200'],
     'CSC200': ['CSC100'],
     'CSC100': []
   };
-  console.log(courseOrder(courses))
+  console.log(courseOrder(courses));
   courses = {
     'CSC300': ['CSC100', 'CSC200'],
     'CSC200': ['CSC100', 'CSC141'],
@@ -76,7 +81,7 @@ function test() {
     'CSC141': [],
     'CSC50': []
   };
-  console.log(courseOrder(courses))
+  console.log(courseOrder(courses));
 };
 
 test();
