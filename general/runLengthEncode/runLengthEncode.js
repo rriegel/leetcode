@@ -17,7 +17,7 @@ function encode(str) {
   for (let i = 0; i <= str.length; i ++) {
     char = str[i];
     if ((prev && prev !== char) || i === str.length) {
-      res += count.toString() + prev;
+      res += count + prev;
       count = 0;
     }
     count ++;
