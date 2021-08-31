@@ -9,7 +9,6 @@ const adjList = {
 
 const DFSiterative = (graph, start) => {
   const stack = [start];
-  const visited = {};
 
   while (stack.length) {
     let curr = stack.pop();
@@ -19,7 +18,7 @@ const DFSiterative = (graph, start) => {
     }
   }
 };
-// utilizes the call stack
+// utilizes the call STACK
 const DFSrecursive = (graph, start) => {
   console.log(start);
   for (let neighbor of graph[start]) {
@@ -27,6 +26,20 @@ const DFSrecursive = (graph, start) => {
   }
 };
 
-DFSiterative(adjList, 'a'); // acebdf
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
-DFSrecursive(adjList, 'a'); // abdfce
+const BFSiterative = (graph, start) => {
+  const queue = [start];
+
+  while (queue.length) {
+    let curr = queue.shift();
+    console.log(curr);
+    for (let neighbor of adjList[curr]) {
+      queue.push(neighbor);
+    }
+  }
+};
+
+// DFSiterative(adjList, 'a'); // acebdf
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
+// DFSrecursive(adjList, 'a'); // abdfce
+
+BFSiterative(adjList, 'a'); // abcdef
