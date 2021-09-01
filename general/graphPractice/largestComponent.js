@@ -6,7 +6,6 @@ The function should return the size of the largest connected component in the gr
 */
 // DFS traversal
 function explore(graph, currNode, visited) {
-  currNode = Number(currNode);
   if (visited.has(currNode)) return 0;
 
   let size = 1;
