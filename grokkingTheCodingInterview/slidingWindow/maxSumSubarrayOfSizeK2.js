@@ -15,7 +15,7 @@ Explanation: Subarray with maximum sum is [3, 4].
 function maxSubarraySum(arr, k) {
   let wStart = 0, wSum = 0, maxSum = 0;
 
-  for (let wEnd = 0; wEnd < arr.length; wEnd ++) {
+  for (let wEnd = 1; wEnd < arr.length; wEnd ++) {
     wSum += arr[wEnd];
     if (wEnd >= k-1) {
       maxSum = Math.max(maxSum, wSum);
