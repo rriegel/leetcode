@@ -22,16 +22,17 @@ For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should beco
   // return arr
 function sortThreeChars(arr) {
   let first = 0, last = arr.length-1, mid = 0;
-  while (mid < last) {
+  while (mid <= last) {
     if (arr[mid] === 'B') {
       [arr[mid], arr[last]] = [arr[last], arr[mid]];
       last --;
-    }
-    if (arr[mid] === 'R') {
+    } else if (arr[mid] === 'R') {
       [arr[mid], arr[first]] = [arr[first], arr[mid]];
       first ++;
+      mid ++;
+    } else {
+      mid ++;
     }
-    mid ++;
   }
   return arr;
 };
