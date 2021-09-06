@@ -13,7 +13,7 @@ Output: ["()"]
 Constraints:
 1 <= n <= 8
 */
-
+// time complexity - O(2^2n * 2n) --> exponential time bc of recursion and linear beacuse of constructing results
 var generateParenthesis = function(n) {
   const result = [];
 
@@ -42,3 +42,9 @@ var generateParenthesis = function(n) {
 
   return result;
 };
+
+function test() {
+  console.log(generateParenthesis(3));
+};
+
+test();
