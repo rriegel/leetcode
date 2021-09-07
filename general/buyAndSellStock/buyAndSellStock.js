@@ -41,3 +41,5 @@ var maxProfit = function(prices) {
   }
   return maxProfit;
 };
+// time - O(n) we are only looping once
+// space - O(1) because we are not creating any scaling vars
