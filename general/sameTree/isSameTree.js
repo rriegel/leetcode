@@ -30,23 +30,24 @@ var isSameTree = function(p, q) {
   let areIdentical = true;
 
   const dfs = (node1, node2) => {
-      if (!node1 && !node2) return;
-      if (!node1) {
-          areIdentical = false;
-          return;
-      }
-      if (!node2) {
-          areIdentical = false;
-          return;
-      }
-      if (node1.val !== node2.val) {
-          areIdentical = false;
-          return;
-      } else {
-          dfs(node1.left, node2.left);
-          dfs(node1.right, node2.right);
-      }
+    if (!node1 && !node2) return;
+    if (!node1) {
+    areIdentical = false;
+    return;
+    }
+    if (!node2) {
+    areIdentical = false;
+    return;
+    }
+    if (node1.val !== node2.val) {
+    areIdentical = false;
+    return;
+    } else {
+    dfs(node1.left, node2.left);
+    dfs(node1.right, node2.right);
+    }
   };
+
   dfs(p, q);
   return areIdentical;
 };
