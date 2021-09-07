@@ -29,7 +29,6 @@ All the integers of nums are unique.
  * @return {number[][]}
  */
 // time - O(n!*n)
-// space
 // use backtracking method to cycle through combinations
 var permute = function(nums) {
   const result = [];
