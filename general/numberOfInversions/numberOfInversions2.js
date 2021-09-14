@@ -32,13 +32,12 @@ function mergeAndCount(arr,l,m,r) {
 
 // Merge sort function
 function mergeSortAndCount(arr, l, r) {
-  // Keeps track of the inversion count at a
-  // particular node of the recursion tree
+  // Keeps track of the inversion count at a particular node of the recursion tree
   let count = 0;
+
   if (l < r) {
     let m = Math.floor((l + r) / 2);
-    // Total inversion count = left subarray count
-    // + right subarray count + merge count
+    // Total inversion count = left subarray count + right subarray count + merge count
 
     // Left subarray count
     count += mergeSortAndCount(arr, l, m);
@@ -53,8 +52,10 @@ function mergeSortAndCount(arr, l, r) {
 }
 
 function test() {
-  console.log(mergeSortAndCount([2, 4, 1, 3, 5], 0, 4)); // 3
-  console.log(mergeSortAndCount([5, 4, 3, 2, 1], 0, 4)); // 10
+  let arr = [2, 4, 1, 3, 5];
+  console.log(mergeSortAndCount(arr, 0, arr.length-1)); // 3
+  arr = [5, 4, 3, 2, 1];
+  console.log(mergeSortAndCount(arr, 0, arr.length-1)); // 10
 };
 
 test();
