@@ -56,7 +56,9 @@ function sortThree(nums) {
   }
   return nums;
 };
-
+// time and space
+// time - O(n)
+// space - O(1)
 function test() {
   console.log(sortThree([2,0,2,1,1,0]));
   console.log(sortThree([0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]));
