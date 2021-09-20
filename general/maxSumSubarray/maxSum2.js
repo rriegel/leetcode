@@ -28,6 +28,7 @@ function test() {
   console.log(maxSum([34, -50, 42, 14, -5, 86]) === 137);
   console.log(maxSum([-5, -1, -8, -9]) === 0);
   console.log(maxSum([1]) === 1);
+  console.log(maxSum([]) === 0);
 };
 
 test();
