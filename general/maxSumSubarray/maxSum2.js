@@ -11,9 +11,10 @@ Do this in O(N) time.
 // sliding window
 // keep track of maxSum, currSum
 // loop thru elements
-  // if the curr element is great than the maxSum
+  // if the curr element is greater than the maxSum
     //
 function maxSum(nums) {
+  if (nums.length < 2) return nums[0] > 0 ? nums[0] : 0;
   let maxSum = 0;
   let currSum = nums[0];
   for (let i = 1; i < nums.length; i ++) {
@@ -26,6 +27,7 @@ function maxSum(nums) {
 function test() {
   console.log(maxSum([34, -50, 42, 14, -5, 86]) === 137);
   console.log(maxSum([-5, -1, -8, -9]) === 0);
+  console.log(maxSum([1]) === 1);
 };
 
 test();
