@@ -31,7 +31,7 @@ function minRangeToSort(nums) {
     }
   }
   if (s === n - 1) {
-    return 'The array is sorted';
+    return null;
   }
   for (e = n - 1; e > 0; e --) {
     if (nums[e] < nums[e - 1]) {
@@ -64,6 +64,7 @@ function minRangeToSort(nums) {
 };
 
 function test() {
+  console.log(minRangeToSort([1, 5, 7, 8, 9, 10])); // null
   console.log(minRangeToSort([1, 7, 9, 5, 7, 8, 10])); // [1, 5]
   console.log(minRangeToSort([1, 7, 9, 5, 7, 8, 4])); // [1, 6]
   console.log(minRangeToSort([10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60])); // [3, 8]

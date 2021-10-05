@@ -19,20 +19,23 @@ return left and right in an array
 // brute force - O(n^2) time || O(1) space
 function minRangeToSort(nums) {
   let left = nums.length - 1, right = 0;
+  let sorted = true;
 
   for (let i = 0; i < nums.length; i ++) {
     for (let j = i + 1; j < nums.length; j ++) {
       if (nums[j] < nums[i]) {
+        sorted = false;
         left = Math.min(i, left);
         right = Math.max(j, right);
       }
     }
   }
 
-  return [left, right];
+  return sorted ? null : [left, right];
 };
 
 function test() {
+  console.log(minRangeToSort([1, 5, 7, 8, 9, 10])); // null
   console.log(minRangeToSort([1, 7, 9, 5, 7, 8, 10])); // [1, 5]
   console.log(minRangeToSort([1, 7, 9, 5, 7, 8, 4])); // [1, 6]
   console.log(minRangeToSort([10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60])); // [3, 8]
