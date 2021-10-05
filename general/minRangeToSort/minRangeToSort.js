@@ -8,12 +8,14 @@ Explanation:
 The numbers between index 1 and 5 are out of order and need to be sorted.
 */
 
-// brute force - O(n^2) time || O(1) space
-  // keep track of left and right boundaries of needing sorted - initialized at nums.length-1 and 0, respectively
-    // start a nested loop with j being i + 1
-      // if the nums[i] < nums[j]
-        // set the left and right values to the min and max of the corresponding pointer and its current value
-  // return left and right in an array
+/*
+brute force - O(n^2) time || O(1) space
+  keep track of left and right boundaries of needing sorted - initialized at nums.length-1 and 0, respectively
+    start a nested loop with j being i + 1
+      if the nums[i] < nums[j]
+        set the left and right values to the min and max of the corresponding pointer and its current value
+  return left and right in an array
+*/
 
 function minRangeToSort(nums) {
   let left = nums.length - 1, right = 0;
