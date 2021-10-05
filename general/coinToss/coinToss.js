@@ -17,7 +17,7 @@ function unbiasedCoinToss() {
 function test() {
   let heads = 0;
   let tails = 0;
-  for (let i = 0; i < 10000; i ++) {
+  for (let i = 0; i < 1000; i ++) {
     if (unbiasedCoinToss() === 'H') {
       heads ++;
     } else {
@@ -25,8 +25,8 @@ function test() {
     }
   }
   console.log('Unbiased Coin Toss');
-  console.log(`H: ${((heads/10000)*100).toFixed(2)} %`);
-  console.log(`T: ${((tails/10000)*100).toFixed(2)} %`);
+  console.log(`H: ${((heads/1000)*100).toFixed(2)} %`);
+  console.log(`T: ${((tails/1000)*100).toFixed(2)} %`);
 };
 
 test();
