@@ -30,9 +30,9 @@ function minRangeToSort(nums) {
       break;
     }
   }
-  if (left === n - 1) {
-    return null;
-  }
+
+  if (left === n - 1) return null;
+
   for (right = n - 1; right > 0; right --) {
     if (nums[right] < nums[right - 1]) {
       break;
@@ -46,7 +46,7 @@ function minRangeToSort(nums) {
   }
   for (i = 0; i < left; i ++) {
     if (nums[i] > min) {
-      left = i
+      left = i;
       break;
     }
   }
