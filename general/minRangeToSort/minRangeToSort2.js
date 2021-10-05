@@ -23,44 +23,40 @@ Solution:
 // Optimized solution (greedy algorithm) - O(n) time || O(1) space
 function minRangeToSort(nums) {
   const n = nums.length;
-  let s = 0, e = n - 1, i, min, max;
+  let left = 0, right = n - 1, i, min, max;
 
-  for (s = 0; s < n - 1; s ++) {
-    if (nums[s] > nums[s + 1]) {
+  for (left = 0; left < n - 1; left ++) {
+    if (nums[left] > nums[left + 1]) {
       break;
     }
   }
-  if (s === n - 1) {
+  if (left === n - 1) {
     return null;
   }
-  for (e = n - 1; e > 0; e --) {
-    if (nums[e] < nums[e - 1]) {
+  for (right = n - 1; right > 0; right --) {
+    if (nums[right] < nums[right - 1]) {
       break;
     }
   }
 
-  max = nums[s], min = nums[s];
-  for (i = s + 1; i <= e; i ++) {
-    if (nums[i] > max) {
-      max = nums[i];
-    }
-    if (nums[i] < min) {
-      min = nums[i];
-    }
+  max = nums[left], min = nums[left];
+  for (i = left + 1; i <= right; i ++) {
+    if (nums[i] > max) { max = nums[i]; }
+    if (nums[i] < min) { min = nums[i]; }
   }
-  for (i = 0; i < s; i ++) {
+  for (i = 0; i < left; i ++) {
     if (nums[i] > min) {
-      s = i
+      left = i
       break;
     }
   }
-  for (i = n - 1; i > e; i --) {
+  for (i = n - 1; i > right; i --) {
     if (nums[i] < max) {
-      e = i;
+      right = i;
       break;
     }
   }
-  return [s, e];
+  return [left, right];
 };
 
 function test() {
