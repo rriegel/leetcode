@@ -24,7 +24,6 @@ Output: "j"
 Example 5:
 Input: letters = ["c","f","j"], target = "j"
 Output: "c"
-
 */
 
 function nextGreatestLetter(letters, target) {
