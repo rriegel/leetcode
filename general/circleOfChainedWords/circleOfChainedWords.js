@@ -20,8 +20,7 @@ function chainedWords(words, currIdx = 0) {
     for (let i = 0; i < words.length; i ++) {
       if (curr === words[i]) {
         continue;
-      }
-      if (curr[last] === words[i][0]) {
+      } else if (curr[last] === words[i][0]) {
         let chained = words[i];
         words.splice(currIdx, 1);
         currIdx = words.indexOf(chained);
