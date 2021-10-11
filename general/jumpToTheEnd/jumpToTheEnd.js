@@ -21,14 +21,14 @@ function jumpToTheEnd(nums) {
   const n = nums.length-1;
   let minJumps = Infinity;
 
-  const dfs = (i, maxJumpL, currJumps) => {
+  const dfs = (i, jMax, currJumps) => {
     if (i === n) {
       minJumps = Math.min(minJumps, currJumps);
       return;
     } else if (i > n) {
       return;
     } else {
-      for (let j = 1; j <= maxJumpL; j ++) {
+      for (let j = 1; j <= jMax; j ++) {
         dfs(i + j, nums[j], currJumps + 1)
       }
     }
