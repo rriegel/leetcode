@@ -10,6 +10,7 @@ Explanation:
 The words in the order of ['apple', 'eggs', 'snack', 'karat', 'tuna'] creates a circle of chained words.
 */
 
+// non-optimized solution --> recursion
 function chainedWords(words, currIdx = 0) {
   if (words.length === 1) {
     return true;
@@ -31,9 +32,12 @@ function chainedWords(words, currIdx = 0) {
   }
 };
 
+// actually should build a directed graph out of this information
+
 function test() {
   console.log(chainedWords(['eggs', 'karat', 'apple', 'snack', 'tuna']) === true);
   console.log(chainedWords(['eggs', 'karat', 'apple', 'snack']) === false);
+  console.log(chainedWords(['eggs', 'karat', 'apple', 'snack', 'tuns']) === false);
 };
 
 test();
