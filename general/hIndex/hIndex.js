@@ -22,7 +22,7 @@ possible strategies
 populating an object with the values in the array and incrementing count of keys that are greater or equal to nums[i]
 looping back through the object to return the max key whose value is at least equal to the key
 
-2) time O(n*logn) | space O(1)
+*** 2) time O(n*logn) | space O(1) ***
 first sort the array
 and then loop through the sorted array from the back to compare the value to its position in the array
   this will validate if it can be counted as h index or not
