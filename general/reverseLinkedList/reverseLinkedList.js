@@ -31,7 +31,7 @@ function test() {
   let newList = new LinkedList();
   newList.head = newNode;
 
-  // console.log(reverseLinkedList(newList.head));
+  console.log(reverseLinkedList(newList.head));
 
   newList = new LinkedList();
   let current;
