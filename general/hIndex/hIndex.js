@@ -48,6 +48,8 @@ function test() {
   console.log(hIndex([3, 4]) === 2);
   console.log(hIndex([2, 2, 2, 2]) === 2);
   console.log(hIndex([3, 5, 0, 1, 3]) === 3);
+  console.log(hIndex([3, 5, 2, 4, 6, 8]) === 4);
+  console.log(hIndex([3, 1, 2, 4, 6, 8, 24, 1, 22, 4, 6, 6]) === 6);
 
 };
 
