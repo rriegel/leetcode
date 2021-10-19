@@ -16,14 +16,19 @@ function TreeNode(val) {
 function deepestNode(root) {
   if (!root) return null;
   let deepest = null;
-  let deepestLevel = -Infinity;
-
+  let deepestLevel = 0;
   const dfs = (node, level) => {
-
+    if (!node.left && !node.right) {
+      if (level > deepestLevel) {
+        deepest = node.val;
+        deepestLevel = level;
+      }
+    } else {
+      if (node.left) dfs(node.left, level + 1);
+      if (node.right) dfs(node.right, level + 1);
+    }
   };
-
-  dfs(root, 0);
-
+  dfs(root, 1);
   return deepest;
 };
 
