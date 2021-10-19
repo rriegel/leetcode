@@ -13,15 +13,13 @@ after loop return true
 */
 
 function checkPossibility(nums) {
-  if (nums.length < 2) return true;
-  let count = 0;
-  for (let i = nums.length-1; i > 0; i --) {
-    let j = 1;
-    while (nums[i - j] && (nums[i - j] > nums[i])) {
-      count ++;
-      j ++;
-      if (count > 1) return false;
-
+  let cheatCard = false;
+  for (let i = 0; i < nums.length - 1; i ++) {
+    if (nums[i] > nums[i + 1]) {
+      if (cheatCard || nums[i] > nums[i + 2] && nums[i - 1] > nums[i + 1]) {
+        return false;
+      }
+      cheatCard = true;
     }
   }
   return true;
@@ -37,7 +35,6 @@ function test() {
   console.log(checkPossibility([13, 10, 5, 7]) === false);
   console.log(checkPossibility([3,4,2,3]) === false);
 
-  /* current function does not handle this case */
   console.log(checkPossibility([5,7,1,8]) === true);
 };
 
