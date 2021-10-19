@@ -16,9 +16,12 @@ function checkPossibility(nums) {
   if (nums.length < 2) return true;
   let count = 0;
   for (let i = nums.length-1; i > 0; i --) {
-    if (nums[i - 1] > nums[i]) {
+    let j = 1;
+    while (nums[i - j] && (nums[i - j] > nums[i])) {
       count ++;
+      j ++;
       if (count > 1) return false;
+
     }
   }
   return true;
@@ -32,9 +35,10 @@ function test() {
   console.log(checkPossibility([10, 5, 4]) === false);
   console.log(checkPossibility([10, 5, 1]) === false);
   console.log(checkPossibility([13, 10, 5, 7]) === false);
+  console.log(checkPossibility([3,4,2,3]) === false);
 
   /* current function does not handle this case */
-  console.log(checkPossibility([3,4,2,3]) === false);
+  console.log(checkPossibility([5,7,1,8]) === true);
 };
 
 test();
