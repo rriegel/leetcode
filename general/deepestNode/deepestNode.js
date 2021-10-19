@@ -39,6 +39,11 @@ function test() {
   root1.left.left = new TreeNode('d');
 
   console.log(deepestNode(root1) === 'd');
+
+  root1.right.right = new TreeNode('e');
+  root1.right.right.left = new TreeNode('f');
+
+  console.log(deepestNode(root1) === 'f');
 };
 
 test();
