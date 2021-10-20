@@ -33,7 +33,7 @@ function makeLargestNumber(nums) {
 };
 
 function test() {
-  console.log(makeLargestNumber([17, 7, 2, 45, 72]) === 77245217);
+  console.log(makeLargestNumber([17, 7, 73, 2, 45, 72]) === 7737245217);
   console.log(makeLargestNumber([2, 5, 3, 21, 2, 1, 0, 3, 4]) === 5433222110);
 };
 
