@@ -17,6 +17,7 @@ function deepestNode(root) {
   if (!root) return null;
   let deepest = null;
   let deepestLevel = 0;
+
   const dfs = (node, level) => {
     if (!node.left && !node.right) {
       if (level > deepestLevel) {
@@ -28,6 +29,7 @@ function deepestNode(root) {
       if (node.right) dfs(node.right, level + 1);
     }
   };
+
   dfs(root, 1);
   return deepest;
 };
