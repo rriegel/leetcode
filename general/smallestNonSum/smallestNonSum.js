@@ -57,7 +57,6 @@ function smallestNonSum(nums) {
 function test() {
   console.log(smallestNonSum([17, 7, 2, 45, 72]) === 1);
   console.log(smallestNonSum([1, 2, 3, 8, 9, 10]) === 7);
-  console.log(smallestNonSum([1, 2, 3, 8, 9, 10]) === 7);
 };
 
 test();
