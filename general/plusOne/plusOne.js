@@ -26,12 +26,18 @@ function plusOne(nums) {
     }
     i --;
   }
+  if (carry) {
+    nums.unshift(1);
+    carry = false;
+  }
   return nums;
 };
 
 function test() {
   console.log(plusOne([2,3,4])) // [2,3,5]
   console.log(plusOne([2,9,9])) // [3,0,0]
+  console.log(plusOne([1,3,4,9])) // [1,3,5,0]
+  console.log(plusOne([9,9])) // [1,0,0]
 };
 
 test();
