@@ -15,8 +15,7 @@ print(Solution().plusOne(num))
 
 function plusOne(nums) {
   const n = nums.length;
-  let carry = false;
-  let i = n-1;
+  let i = n-1, carry = false;
   while (i >= 0 && (i === n-1 || carry)) {
     if (nums[i] === 9) {
       nums[i] = 0;
