@@ -25,3 +25,14 @@ function solution(S) {
   }
   return additional;
 }
+
+function test() {
+  console.log(solution("") === 0);
+  console.log(solution("aaa") === 0);
+  console.log(solution("aaabb") === 1);
+  console.log(solution("aaabbb") === 0);
+  console.log(solution("aabbbc") === 3);
+  console.log(solution("aabbbcd") === 5);
+};
+
+test();
