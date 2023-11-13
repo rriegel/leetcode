@@ -40,7 +40,7 @@ var climbStairs = function(n) {
   return second;
 };
 
-/*
+
 // approach - dynamic programming
 var climbStairs = function(n) {
   if (n < 1) return 0;
@@ -56,4 +56,3 @@ var climbStairs = function(n) {
   }
   return temp;
 };
-*/
