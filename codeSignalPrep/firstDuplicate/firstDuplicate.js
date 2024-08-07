@@ -48,4 +48,9 @@ function solution(a) {
       }
   }
   return -1;
-}
+};
+
+/* 
+Big O Notation
+this solution is O(n) time complexity and space complexity
+*/
