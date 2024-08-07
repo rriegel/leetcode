@@ -63,3 +63,12 @@ function solution(s) {
     return '_';        
   }
 };
+
+/* 
+Big O Notation
+this solution is O(n^2) time complexity and O(n) space complexity
+- O(n^2) time complexity
+  * because indexOf is being used within a for loop. both functions are O(n) so having them nested makes it O(n^2)
+- O(n) space complexity
+  * because the function makes 2 new arrays that scale based on the input array so O(2n) => O(n)
+*/
