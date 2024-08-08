@@ -33,9 +33,9 @@ inputArray without elements k - 1, 2k - 1, 3k - 1 etc.
 function solution(inputArray, k) {
   const res = [];
   for (let i = 0; i < inputArray.length; i ++) {
-      if ((i+1) % k !== 0) {
-          res.push(inputArray[i]);
-      }
+    if ((i+1) % k !== 0) {
+      res.push(inputArray[i]);
+    }
   }
   return res;
 };
