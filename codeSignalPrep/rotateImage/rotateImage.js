@@ -34,13 +34,13 @@ a[i].length = a.length,
 
 function solution(a) {
   for (let i = 0; i < a.length; i ++) {
-      for (let j = i; j < a[0].length; j ++) {
-          [a[i][j], a[j][i]] = [a[j][i], a[i][j]];
-      }
+    for (let j = i; j < a[0].length; j ++) {
+      [a[i][j], a[j][i]] = [a[j][i], a[i][j]];
+    }
   }
   for (let i = 0; i < a.length; i ++) {
-      var currArr = a[i];
-      currArr.reverse();
+    var currArr = a[i];
+    currArr.reverse();
   }
   return a;
 }
