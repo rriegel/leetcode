@@ -45,3 +45,8 @@ function solution(a) {
   return a;
 }
 
+/*
+Big O Notation
+this solution is O(2n) time complexity - so O(n)
+this solution is O(1) space complexity
+*/
