@@ -40,3 +40,7 @@ function solution(inputArray, k) {
   return res;
 };
 
+/* 
+Big O Notation
+this solution is O(n) time complexity and space complexity
+*/
