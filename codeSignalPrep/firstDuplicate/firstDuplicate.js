@@ -35,17 +35,17 @@ function solution(a) {
   const b = Array(a.length).fill(0);
   // loop through a
   for (let i = 0; i < a.length; i ++) {
-      // use the value of a[i]
-      // and put a 1 in b's index that is a[i] - 1
-      if (b[a[i] - 1] === 0) {
-          b[a[i] - 1] = 1;   
-      } else {
-          // if b[a[i] - 1] already == 1, return that value (a[i])
-          // because that means it is the first duplicate
-          // this works with an array instead of an object
-          // because the nums are between 1 and a.length
-          return a[i];
-      }
+    // use the value of a[i]
+    // and put a 1 in b's index that is a[i] - 1
+    if (b[a[i] - 1] === 0) {
+      b[a[i] - 1] = 1;   
+    } else {
+      // if b[a[i] - 1] already == 1, return that value (a[i])
+      // because that means it is the first duplicate
+      // this works with an array instead of an object
+      // because the nums are between 1 and a.length
+      return a[i];
+    }
   }
   return -1;
 };
