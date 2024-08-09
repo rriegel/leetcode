@@ -22,7 +22,7 @@ var climbStairs = function(n) {
 };
 */
 // approach - fibonacci sequence
-var climbStairs = function(n) {
+var climbStairs2 = function(n) {
   if (n === 0 || n === 1) return 1;
 
   let first = 1;
@@ -36,8 +36,8 @@ var climbStairs = function(n) {
   return second;
 };
 // approach - dynamic programming
-/*
-var climbStairs = function(n) {
+
+var climbStairs3 = function(n) {
   if (n < 1) return 0;
   if (n == 1) return 1;
   if (n == 2) return 2;
@@ -51,4 +51,3 @@ var climbStairs = function(n) {
   }
   return temp;
 };
-*/
