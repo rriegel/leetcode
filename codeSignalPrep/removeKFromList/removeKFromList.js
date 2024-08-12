@@ -58,3 +58,18 @@ function solution(l, k) {
   }
   return l;
 }
+
+function solution2(l, k) {
+  while (l && l.value === k) {
+    l = l.next;
+  }
+  let curr = l;
+  while (curr && curr.next) {
+    if (curr.next.value === k) {
+      curr.next = curr.next.next;
+    } else {
+      curr = curr.next;   
+    }
+  }
+  return l;
+}
