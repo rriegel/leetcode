@@ -1,0 +1,56 @@
+Instructions
+Welcome to the practice task! This task is designed to be a playground that allows you to get acquainted with the testing environment and practice the functionalities of the platform before your real assessment. Your task is to implement a simple container of integer numbers. All operations that should be supported by this database are described below.
+
+Solving this task consists of several levels. Subsequent levels are opened when the current level is correctly solved. You always have access to the data for the current and all previous levels.
+
+Environment details (click here to hide)
+To read the details about the language version, libraries used in the task, and the testing framework, used check out the README tab  in the left panel of the page.
+
+To customize the editor settings and see the editor hotkeys, check out the SETTINGS tab  in the left panel of the page.
+
+To reset your code, click  button in the top right corner of the page. Be careful, this will reset all your code changes!
+
+Unit tests are already implemented and cannot be modified. You can find level 1 tests among the open files. Feel free to look at them and get familiar with the details. There is also an editable sandbox test file, which can be used for testing your code with custom test cases. These tests will be run together with other tests but will not be taken into account for scoring.
+
+To run the tests, you can choose either In Terminal or Structured option from the dropdown  and click  button located on the right part of the screen. The difference between these options is the format of the test results:
+
+If you'd like to receive a raw report of tests, choose the In Terminal option. The tests in this report will contain all debug output you've printed to the console.
+If you'd like to receive test results with more structure, choose the Structured option. Note that debug output is not supported in this option.
+You can execute a single test case by running the following command in the terminal: bash run_single_test.sh "<test_case_name>".
+
+Requirements
+Your task is to implement a simple container of integer numbers. Plan your design according to the level specifications below:
+
+Level 1: Container should support adding and removing numbers.
+Level 2: Container should support getting the median of the numbers stored in it.
+To move to the next level, you need to pass all the tests at this level.
+
+Level 2
+Container should support calculating the median of the numbers stored in it.
+
+getMedian() — should return the median integer - the integer in the middle of the sequence after all integers stored in the container are sorted in ascending order. If the length of the sequence is even, the leftmost integer from the two middle integers should be returned. If the container is empty, this method should return null.
+Examples
+The example below shows how these operations should work (the section is scrollable to the right):
+
+Queries	Explanations
+getMedian()
+add(5)
+add(10)
+add(1)
+getMedian()
+add(4)
+getMedian()
+delete(1)
+getMedian()
+returns null; container state: []
+returns 1; container state: [5]
+returns 2; container state: [5, 10]
+returns 3; container state: [5, 10, 1]
+returns 5; sorted sequence of container numbers is: [1, 5, 10]
+returns 4; container state: [5, 10, 1, 4]
+returns 4; sorted sequence of container numbers is: [1, 4, 5, 10]
+returns true; container state: [5, 10, 4]
+returns 5; sorted sequence of container numbers is: [4, 5, 10]
+[execution time limit] 6 seconds
+
+[memory limit] 1 GB
