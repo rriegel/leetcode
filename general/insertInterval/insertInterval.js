@@ -85,5 +85,5 @@ var insert = function(intervals, newInterval) {
 };
 
 // big O notation
-// O(n) time
+// O(n*log(n)) time --> because that is the sorting algorithm complexity
 // O(1) space
