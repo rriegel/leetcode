@@ -88,4 +88,6 @@ var insert = function(intervals, newInterval) {
 // O(n*log(n)) time --> because that is the sorting algorithm complexity
 // O(1) space
 
+// this is a sliding window algorithm
+
 module.exports = insert;
