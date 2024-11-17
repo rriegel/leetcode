@@ -43,7 +43,6 @@ var insert = function(intervals, newInterval) {
       if (left >= intervals[i][0] && left <= intervals[i][1]) {
           left = Math.min(intervals[i][0], left);
           right = Math.max(intervals[i][1], right);
-          // remove
           intervals.splice(i, 1);
           i --;
           continue;
@@ -52,7 +51,6 @@ var insert = function(intervals, newInterval) {
       if (right >= intervals[i][0] && right <= intervals[i][1]) {
           left = Math.min(intervals[i][0], left);
           right = Math.max(intervals[i][1], right);
-          // remove
           intervals.splice(i, 1);
           i --;
           continue;
@@ -61,7 +59,6 @@ var insert = function(intervals, newInterval) {
       if (intervals[i][0] >= left && intervals[i][0] <= right) {
           left = Math.min(intervals[i][0], left);
           right = Math.max(intervals[i][1], right);
-          // remove
           intervals.splice(i, 1);
           i --;
           continue;
@@ -70,7 +67,6 @@ var insert = function(intervals, newInterval) {
       if (intervals[i][1] >= left && intervals[i][1] <= right) {
           left = Math.min(intervals[i][0], left);
           right = Math.max(intervals[i][1], right);
-          // remove
           intervals.splice(i, 1);
           i --;
           continue;
