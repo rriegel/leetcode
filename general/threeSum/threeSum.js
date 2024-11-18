@@ -8,8 +8,8 @@ var threeSum = function(nums) {
   for (let left = 0; left < nums.length; left ++) {
     if (left === 0 || nums[left] !== nums[left-1]) {
       let target = 0 - nums[left];
-      let mid = left+1;
-      let right = nums.length-1;
+      let mid = left + 1;
+      let right = nums.length - 1;
       while (mid < right) {
         let sum = nums[mid] + nums[right];
         if (target === sum) {
